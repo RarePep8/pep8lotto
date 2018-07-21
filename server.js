@@ -16,7 +16,7 @@ const app = express();
 //   if (err) throw err;
 //   console.log("Connected!");
 // });
-var con = mysql.createConnection(process.env.DATABASE_URL | "mysql://root:root@localhost/mydb");
+var con = mysql.createConnection(process.env.DATABASE_URL);
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
