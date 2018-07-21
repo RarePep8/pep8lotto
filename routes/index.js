@@ -5,7 +5,7 @@ app.use(express.static('/../public'));
 app.get('/', function(req, res) {
   res.sendFile('index.html', {root: './views/'});
 });
-app.get('/login', function(req, res) {
+app.post('/login', function(req, res) {
   database.connection.getConnection(function(err) {
     if (err) throw err;
     database.connection.query("SELECT * FROM user", function (err, result, fields) {
