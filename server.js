@@ -5,19 +5,22 @@ const app = express();
 
 
 
-var con = mysql.createConnection({
-  host: "us-cdbr-iron-east-04.cleardb.net",
-  user: "beffe759b1f87c",
-  password: "2616966b",
-  database: "heroku_49fd57648176c9b",
-});
-
+// var con = mysql.createConnection({
+//   host: process.env."us-cdbr-iron-east-04.cleardb.net",
+//   user: "beffe759b1f87c",
+//   password: "2616966b",
+//   database: "heroku_49fd57648176c9b",
+// });
+//
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+// });
+var con = mysql.createConnection(process.env.DATABASE_URL | "mysql://root:root@localhost/mydb");
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
 });
-
-
 
 
 app.use(express.static('public'));
