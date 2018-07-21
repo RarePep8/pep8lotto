@@ -9,7 +9,7 @@ var con = mysql.createConnection({
   host: "ec2-23-23-247-222.compute-1.amazonaws.com",
   user: "xkrsvbwxcunnsx",
   password: "cc9c0ea6ed43019e80d4030844bc5b12bf5005762cd1225c78f01d1852a0fd01",
-  database: "d2ka9t68prkfm8"
+  database: "d2ka9t68prkfm8",
   port: "5432"
 });
 
