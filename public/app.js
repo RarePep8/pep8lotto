@@ -36,5 +36,5 @@ window.onload = function() {
   const request = new XMLHttpRequest();
   request.addEventListener('load', requestParse);
   request.open('get','/login');
-  request.send();
+  request.send('hi');
 };
