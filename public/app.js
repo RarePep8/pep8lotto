@@ -33,8 +33,12 @@ window.onload = function() {
     console.log("hi");
     document.getElementById('test-text').innerHTML= this.responseText;
   }
-  const request = new XMLHttpRequest();
-  request.addEventListener('load', requestParse);
-  request.open('get','/login?user=123&password=123');
-  request.send();
+  document.getElementById('test-button').onClick = function() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    const request = new XMLHttpRequest();
+    request.addEventListener('load', requestParse);
+    request.open('get','/login?username=' + username + '&password=' + password);
+    request.send();
+  }
 };
