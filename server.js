@@ -6,11 +6,10 @@ const app = express();
 
 
 var con = mysql.createConnection({
-  host: "ec2-23-23-247-222.compute-1.amazonaws.com",
-  user: "xkrsvbwxcunnsx",
-  password: "cc9c0ea6ed43019e80d4030844bc5b12bf5005762cd1225c78f01d1852a0fd01",
-  database: "d2ka9t68prkfm8",
-  port: "5432"
+  host: "us-cdbr-east-04.cleardb.com",
+  user: "beffe759b1f87c",
+  password: "2616966b",
+  database: "heroku_49fd57648176c9b",
 });
 
 con.connect(function(err) {
@@ -39,4 +38,3 @@ app.use('/api', router);
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
-console.log("App listening on port 8080");
