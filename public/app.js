@@ -37,4 +37,5 @@ window.onload = function() {
   request.addEventListener('load', requestParse);
   request.open('get','/login');
   request.send();
+  console.log('test');
 };
