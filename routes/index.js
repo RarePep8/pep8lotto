@@ -10,6 +10,7 @@ database.connection.getConnection(function(err) {
   database.connection.query("SELECT * FROM user", function (err, result, fields) {
     if(err) throw err;
     console.log(result);
+    document.getElementById('test-text').innerHTML=result;
   });
 });
 module.exports = app;
