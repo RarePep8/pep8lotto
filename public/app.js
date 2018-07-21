@@ -31,11 +31,10 @@ window.onload = function() {
   **/
   const requestParse = function() {
     console.log("hi");
-    console.log(this.responseText);
+    document.getElementById('test-text').innerHTML= this.responseText;
   }
   const request = new XMLHttpRequest();
   request.addEventListener('load', requestParse);
   request.open('get','/login');
   request.send();
-  console.log('test');
 };
