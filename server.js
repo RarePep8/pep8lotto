@@ -16,8 +16,8 @@ const app = express();
 //   if (err) throw err;
 //   console.log("Connected!");
 // });
-var con = mysql.createConnection(process.env.DATABASE_URL);
-con.connect(function(err) {
+var con = mysql.createPool(process.env.DATABASE_URL);
+con.getConnection(function(err) {
   if (err) throw err;
   console.log("Connected!");
 });
