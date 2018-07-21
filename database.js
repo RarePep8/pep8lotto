@@ -1,6 +1,6 @@
 var mysql = require('mysql');
-var con = mysql.createPool(process.env.DATABASE_URL);
-con.getConnection(function(err) {
+var connection= mysql.createPool(process.env.DATABASE_URL);
+connection.getConnection(function(err) {
   if (err) throw err;
   console.log("Connected!");
 });
