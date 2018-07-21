@@ -29,5 +29,7 @@ window.onload = function() {
   console.log(day);
   console.log(year);
   **/
-
+const request = new XMLHttpRequest();
+request.open('get','/login');
+request.send();
 };
