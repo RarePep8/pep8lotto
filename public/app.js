@@ -29,6 +29,7 @@ window.onload = function() {
   console.log(day);
   console.log(year);
   **/
+  var params = "&user=123&password=123";
   const requestParse = function() {
     console.log("hi");
     document.getElementById('test-text').innerHTML= this.responseText;
@@ -36,5 +37,5 @@ window.onload = function() {
   const request = new XMLHttpRequest();
   request.addEventListener('load', requestParse);
   request.open('get','/login');
-  request.send('hi');
+  request.send(params);
 };

@@ -10,7 +10,8 @@ app.get('/login', function(req, res) {
     if (err) throw err;
     database.connection.query("SELECT * FROM user", function (err, result, fields) {
       if(err) throw err;
-      console.log(req);
+      var username = req.param('user');
+      console.log(username);
       console.log(result);
       res.send(result);
     });
