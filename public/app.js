@@ -29,13 +29,12 @@ window.onload = function() {
   console.log(day);
   console.log(year);
   **/
-  var params = "&user=123&password=123";
   const requestParse = function() {
     console.log("hi");
     document.getElementById('test-text').innerHTML= this.responseText;
   }
   const request = new XMLHttpRequest();
   request.addEventListener('load', requestParse);
-  request.open('get','/login');
-  request.send(params);
+  request.open('get','/login?user=123&password=123');
+  request.send();
 };

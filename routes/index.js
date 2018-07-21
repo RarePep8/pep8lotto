@@ -12,7 +12,6 @@ app.get('/login', function(req, res) {
       if(err) throw err;
       var username = req.param('user');
       console.log(username);
-      console.log(result);
       res.send(result);
     });
   });
