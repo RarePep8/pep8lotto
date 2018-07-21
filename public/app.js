@@ -34,6 +34,7 @@ window.onload = function() {
     console.log(this.responseText);
   }
   const request = new XMLHttpRequest();
+  request.addEventListener('load', requestParse);
   request.open('get','/login');
   request.send();
 };
