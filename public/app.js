@@ -34,6 +34,7 @@ window.onload = function() {
     document.getElementById('test-text').innerHTML= this.responseText;
   }
   document.getElementById('test-button').onClick = function() {
+    console.log("YEET");
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     const request = new XMLHttpRequest();
