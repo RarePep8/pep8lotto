@@ -29,15 +29,14 @@ window.onload = function() {
   console.log(day);
   console.log(year);
   **/
-  const requestParse = function() {
+  const verifyPassword = function() {
     document.getElementById('test-text').innerHTML= this.responseText;
   }
   document.getElementById('test-button').onclick = function() {
-    console.log("YEET");
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     const request = new XMLHttpRequest();
-    request.addEventListener('load', requestParse);
+    request.addEventListener('load', verifyPassword);
     request.open('get','/login?username=' + username + '&password=' + password);
     request.send();
   }
