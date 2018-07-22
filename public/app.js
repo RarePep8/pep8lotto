@@ -25,7 +25,8 @@ window.onload = function() {
   }
   var logout = function() {
     document.getElementById('login-fields').style.display = "";
-    document.getElementById('login-fields').value = "";
+    document.getElementById('username').value = "";
+    document.getElementById('password').value = "";
     document.getElementById('test-button').onclick = login;
     document.getElementById('test-button').innerText = "login";
   }
