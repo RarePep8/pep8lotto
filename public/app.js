@@ -42,8 +42,11 @@ window.onload = function() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     const request = new XMLHttpRequest();
+    console.log("YEET2");
     request.addEventListener('load', requestParse);
+    console.log("YEET3");
     request.open('get','/login?username=' + username + '&password=' + password);
+    console.log("YEET4");
     request.send();
   }
 };
