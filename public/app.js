@@ -38,7 +38,7 @@ window.onload = function() {
       document.getElementById('username').style.display = "none";
       document.getElementById('password').style.display = "none";
       document.getElementById('test-button').onclick = logout;
-      document.getElementById('test-button').value = "logout";
+      document.getElementById('test-button').innerText = "logout";
     }
 
   }
@@ -56,7 +56,7 @@ window.onload = function() {
     document.getElementById('password').style.display = "";
     document.getElementById('password').value = "";
     document.getElementById('test-button').onclick = login;
-    document.getElementById('test-button').value = "login";
+    document.getElementById('test-button').innerText = "login";
   }
   document.getElementById('test-button').onclick = login;
 };
