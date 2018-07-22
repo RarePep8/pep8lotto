@@ -33,11 +33,7 @@ window.onload = function() {
     console.log(this.responseText);
     console.log(typeof this.responseText);
     document.getElementById('test-text').innerHTML= this.responseText;
-    if(this.responseText == true) {
-      document.getElementById('test-text').innerHTML= "Signed in as";
-    } else {
-      document.getElementById('test-text').innerHTML= "rip";
-    }
+    
   }
   document.getElementById('test-button').onclick = function() {
     var username = document.getElementById('username').value;
