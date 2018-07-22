@@ -29,14 +29,18 @@ window.onload = function() {
   console.log(day);
   console.log(year);
   **/
-  const verifyPassword = function() {
-    document.getElementById('test-text').innerHTML= this.responseText;
+  const verifyPassword = function(name) {
+    if(this.responseText == "true") {
+      document.getElementById('test-text').innerHTML= "Signed in as" + name;
+    } else {
+      document.getElementById('test-text').innerHTML= "rip";
+    }
   }
   document.getElementById('test-button').onclick = function() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     const request = new XMLHttpRequest();
-    request.addEventListener('load', verifyPassword);
+    request.addEventListener('load', verifyPassword(name));
     request.open('get','/login?username=' + username + '&password=' + password);
     request.send();
   }
