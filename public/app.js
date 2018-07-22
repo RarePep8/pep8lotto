@@ -33,6 +33,7 @@ window.onload = function() {
     console.log("hi");
     document.getElementById('test-text').innerHTML= this.responseText;
   }
+  console.log("Hi");
   console.log(document.getElementById('username').innerHTML);
   document.getElementById('test-button').onClick = function() {
     console.log("YEET");
