@@ -14,6 +14,8 @@ app.get('/login', function(req, res) {
       if(err) throw err;
       console.log(result);
       result_string = (result.length == 0) ? "" : result[0].password;
+      console.log(result_string);
+      console.log(password);
       res.send((result_string != "") && (result_string == password));
     });
   });
