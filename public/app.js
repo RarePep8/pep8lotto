@@ -43,7 +43,7 @@ window.onload = function() {
     var password = document.getElementById('password').value;
     const request = new XMLHttpRequest();
     request.addEventListener('load', verifyPassword(name));
-    request.open('get','/login?username=\"' + username + '\"&password=\"' + password+'\"');
+    request.open('get','/login?username=\"' + username + '\"&password=' + password);
     request.send();
   }
 };
