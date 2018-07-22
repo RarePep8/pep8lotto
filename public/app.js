@@ -29,7 +29,7 @@ window.onload = function() {
   console.log(day);
   console.log(year);
   **/
-  const verifyPassword = function(dank) {
+  verifyPassword = function(dank) {
     console.log(this.responseText);
     console.log(typeof this.responseText);
     document.getElementById('test-text').innerHTML= this.responseText;
