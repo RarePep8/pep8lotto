@@ -18,7 +18,7 @@ app.get('/login', function(req, res) {
       console.log(password);
       console.log((result_string != "") && (result_string == password));
       var response = {"verified" : (result_string != "") && (result_string == password)};
-      res.send(response);
+      res.send(result);
     });
   });
 });
