@@ -29,7 +29,7 @@ window.onload = function() {
   console.log(day);
   console.log(year);
   **/
-  const verifyPassword = function() {
+  const verifyPassword = function(dank) {
     console.log(this.responseText);
     console.log(typeof this.responseText);
     document.getElementById('test-text').innerHTML= this.responseText;
@@ -41,7 +41,7 @@ window.onload = function() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     const request = new XMLHttpRequest();
-    request.addEventListener('load', verifyPassword);
+    request.addEventListener('load', verifyPassword('hi'));
     request.open('get','/login?username=\"' + username + '\"&password=' + password);
     request.send();
   }
