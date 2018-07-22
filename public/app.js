@@ -34,7 +34,9 @@ window.onload = function() {
     document.getElementById('test-text').innerHTML= this.responseText;
   }
   console.log("Hi");
-  console.log(document.getElementById('username').innerHTML);
+  document.getElementById('month').onClick = function(){
+    console.log("ye");
+  }
   document.getElementById('test-button').onClick = function() {
     console.log("YEET");
     var username = document.getElementById('username').value;
