@@ -4,8 +4,6 @@ window.onload = function() {
   console.log(year);
   **/
   const verifyPassword = function() {
-    console.log(this.responseText);
-    console.log(typeof this.responseText);
     if(this.responseText == 'true'){
       document.getElementById('logged-in-message').innerText="Hi " + document.getElementById('username').value;
       document.getElementById('login-fields').style.display = "none";
