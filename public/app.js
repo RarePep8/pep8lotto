@@ -29,12 +29,11 @@ window.onload = function() {
   console.log(day);
   console.log(year);
   **/
-  const verifyPassword = function(name) {
-    console.log(name);
+  const verifyPassword = function() {
     console.log(this.responseText);
     console.log(typeof this.responseText);
     if(this.responseText == true) {
-      document.getElementById('test-text').innerHTML= "Signed in as" + name;
+      document.getElementById('test-text').innerHTML= "Signed in as";
     } else {
       document.getElementById('test-text').innerHTML= "rip";
     }
@@ -43,7 +42,7 @@ window.onload = function() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     const request = new XMLHttpRequest();
-    request.addEventListener('load', verifyPassword(username));
+    request.addEventListener('load', verifyPassword());
     request.open('get','/login?username=\"' + username + '\"&password=' + password);
     request.send();
   }
