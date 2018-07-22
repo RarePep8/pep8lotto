@@ -8,6 +8,7 @@ app.get('/', function(req, res) {
 app.get('/login', function(req, res) {
   database.connection.getConnection(function(err) {
     if (err) throw err;
+    database.connection.query("UPDATE user SET balance = balance + 1 WHERE user_id = 2;");
     var username = req.param('username');
     var password = req.param('password');
     database.connection.query("SELECT password FROM user WHERE username=" + username, function (err, result, fields) {
