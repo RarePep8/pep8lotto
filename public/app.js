@@ -33,7 +33,7 @@ window.onload = function() {
     console.log(this.responseText);
     console.log(typeof this.responseText);
     document.getElementById('test-text').innerHTML= this.responseText;
-    if(this.responseText == true){
+    if(this.responseText == 'true'){
       document.getElementById('test-text').innerHTML="YEET";
     }
   }
