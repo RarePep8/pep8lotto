@@ -30,6 +30,8 @@ window.onload = function() {
   console.log(year);
   **/
   const verifyPassword = function(name) {
+    console.log(this.responseText);
+    console.log(typeof this.responseText);
     if(this.responseText == true) {
       document.getElementById('test-text').innerHTML= "Signed in as" + name;
     } else {
