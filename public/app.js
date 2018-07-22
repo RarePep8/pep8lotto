@@ -30,6 +30,7 @@ window.onload = function() {
   console.log(year);
   **/
   const verifyPassword = function(name) {
+    console.log(name);
     console.log(this.responseText);
     console.log(typeof this.responseText);
     if(this.responseText == true) {
