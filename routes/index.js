@@ -9,12 +9,13 @@ app.get('/earn', function(req, res){
 
 });
 app.get('/login', function(req, res) {
-  database.connection.getConnection(function(err) {
+  database.pool.getConnection(function(err, connection) {
     if (err) throw err;
     var username = req.param('username');
     var password = req.param('password');
-    database.connection.query("SELECT password FROM user WHERE username=" + username, function (err, result, fields) {
+    connection.query("SELECT password FROM user WHERE username=" + username, function (err, result, fields) {
       if(err) throw err;
+      connection.release();
       console.log(result);
       result_string = (result.length == 0) ? "" : result[0].password;
       console.log(result_string);
@@ -22,7 +23,6 @@ app.get('/login', function(req, res) {
       console.log((result_string != "") && (result_string == password));
       var response = {"verified" : (result_string != "") && (result_string == password)};
       res.send((result_string != "") && (result_string == password));
-      database.connection.release();
     });
   });
 });
