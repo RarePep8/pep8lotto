@@ -13,8 +13,8 @@ app.get('/login', function(req, res) {
     database.connection.query("SELECT password FROM user WHERE username=" + username, function (err, result, fields) {
       if(err) throw err;
       console.log(result);
-      result_string = (result.length == 0) ? "" : result.[0];
-      res.send(result_string);
+      result_string = (result.length == 0) ? "" : result[0].password;
+      res.send((result_string != "") && (result_string == password));
     });
   });
 });
