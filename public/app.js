@@ -9,8 +9,7 @@ window.onload = function() {
     document.getElementById('test-text').innerHTML= this.responseText;
     if(this.responseText == 'true'){
       document.getElementById('test-text').innerHTML="Hi " + document.getElementById('username').value;
-      document.getElementById('username').style.display = "none";
-      document.getElementById('password').style.display = "none";
+      document.getElementById('login-fields').style.display = "none";
       document.getElementById('test-button').onclick = logout;
       document.getElementById('test-button').innerText = "logout";
     }
@@ -25,10 +24,8 @@ window.onload = function() {
     request.send();
   }
   var logout = function() {
-    document.getElementById('username').style.display = "";
-    document.getElementById('username').value = "";
-    document.getElementById('password').style.display = "";
-    document.getElementById('password').value = "";
+    document.getElementById('login-fields').style.display = "";
+    document.getElementById('login-fields').value = "";
     document.getElementById('test-button').onclick = login;
     document.getElementById('test-button').innerText = "login";
   }
