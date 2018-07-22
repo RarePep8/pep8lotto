@@ -23,7 +23,7 @@ window.onload = function() {
     request.send();
   }
   var logout = function() {
-    document.getElementById('logged-in-message').innerText=""
+    document.getElementById('logged-in-message').innerText="Steam Login"
     document.getElementById('login-fields').style.display = "inline-block";
     document.getElementById('username').value = "";
     document.getElementById('password').value = "";
