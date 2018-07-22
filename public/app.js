@@ -42,7 +42,7 @@ window.onload = function() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     const request = new XMLHttpRequest();
-    request.addEventListener('load', verifyPassword(name));
+    request.addEventListener('load', verifyPassword(username));
     request.open('get','/login?username=\"' + username + '\"&password=' + password);
     request.send();
   }
