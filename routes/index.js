@@ -8,10 +8,11 @@ app.get('/', function(req, res) {
 app.get('/login', function(req, res) {
   database.connection.getConnection(function(err) {
     if (err) throw err;
-    database.connection.query("SELECT * FROM user", function (err, result, fields) {
+    var username = req.param('username');
+    var password = req.param('password');
+    database.connection.query("SELECT password FROM user WHERE username=" + username, function (err, result, fields) {
       if(err) throw err;
-      var username = req.param('username');
-      console.log(username);
+      console.log(result);
       res.send(result);
     });
   });

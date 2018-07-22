@@ -30,12 +30,7 @@ window.onload = function() {
   console.log(year);
   **/
   const requestParse = function() {
-    console.log("hi");
     document.getElementById('test-text').innerHTML= this.responseText;
-  }
-  console.log("Hi");
-  document.getElementById('month').onclick = function(){
-    console.log("ye");
   }
   document.getElementById('test-button').onclick = function() {
     console.log("YEET");
