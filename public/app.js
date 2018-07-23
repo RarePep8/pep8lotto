@@ -13,7 +13,6 @@ window.onload = function() {
 
   }
   var login = function() {
-    console.log("hi");
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     const request = new XMLHttpRequest();
@@ -22,13 +21,12 @@ window.onload = function() {
     request.send();
   }
   var logout = function() {
-    document.getElementById('logged-in-message').innerText="Steam Login"
+    document.getElementById('logged-in-message').innerText=""
     document.getElementById('login-fields').style.display = "inline-block";
     document.getElementById('username').value = "";
     document.getElementById('password').value = "";
     document.getElementById('login-button').onclick = login;
     document.getElementById('login-button').innerText = "login";
   }
-  console.log("hi2");
   document.getElementById('login-button').onclick = login;
 };
