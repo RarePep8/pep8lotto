@@ -13,21 +13,26 @@
 
 <body>
   <header>
+  <nav class="navbar navbar-inverse">
   <div id='header-region' class='container-fluid'>
+  HIIIIIIIIIII
   <div id='login-region' class='container-fluid'>
   <div id='logged-in-message'>
   </div>
   <div id='login-fields'>
-    <input id="username" type="text" placeholder='Username'>
-    <input id="password" type="text" placeholder='Password'>
+    <input id="username" type="text" class='form-inline input-sm' placeholder='Username'>
+    <input id="password" type="text" class='form-inline input-sm' placeholder='Password'>
   </div>
   <div id='login-submit'>
-    <button id='login-button' class='btn btn-primary btn-md'>Login</button>
+    <button id='login-button' class='btn btn-primary btn-md pep8btn'>Login</button>
   </div>
   </div>
   </div>
+      <hr style='margin:0;'>
+</nav>
   </header>
-  <div class='container'>
+  <div id='main-region' class='container'>
+    <span id='doubleup' class="btn btn-primary pep8btn">2X</span>
     <button id='counter-button'>YEET</button>
   </div>
   <script src="app.js"></script>

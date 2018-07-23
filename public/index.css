@@ -16,18 +16,38 @@
   vertical-align: middle;
 }
 #header-region{
-  padding-top: 20px;
+  padding: 15px;
 }
-
+#doubleup{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    font-size: 120px;
+    line-height: 300px;
+    padding: 0;
+}
+#main-region{
+    padding: 20px;
+}
+.navbar-inverse {
+    background-color: transparent !important;
+    border-style: none !important;
+    border-radius: 0px !important;
+}
+.pep8btn{
+    border-width: 2px !important;
+    transition: 0.2s;
+}
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     border-color: white !important;
     background-color: transparent !important;
 }
 .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #ff9933 !important;
+    background-color: #ff0066 !important;
 }
 body {
   font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+  color: white ;
   background: url("img/bg-pattern.png"), #7b4397;
   background: url("img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
   background: url("img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
