@@ -1,10 +1,32 @@
-#login-submit{
-  display: inline-block;
-}
 #login-fields{
   display: inline-block;
 }
+#login-submit{
+  display: inline-block;
+}
+#login-button{
+  border-radius: 15px;
+  outline: none;
+}
+#login-region{
+  float: right;
+}
+#logged-in-message{
+  float: left;
+}
+#header-region{
+  padding-top: 20px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    border-color: white !important;
+    background-color: transparent !important;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #ff9933 !important;
+}
 body {
+  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
   background: url("img/bg-pattern.png"), #7b4397;
   background: url("img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
   background: url("img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);

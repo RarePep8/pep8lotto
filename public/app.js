@@ -25,8 +25,8 @@ window.onload = function() {
     document.getElementById('login-fields').style.display = "inline-block";
     document.getElementById('username').value = "";
     document.getElementById('password').value = "";
-    document.getElementById('test-button').onclick = login;
-    document.getElementById('test-button').innerText = "login";
+    document.getElementById('login-button').onclick = login;
+    document.getElementById('login-button').innerText = "login";
   }
-  document.getElementById('test-button').onclick = login;
+  document.getElementById('login-button').onclick = login;
 };

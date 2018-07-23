@@ -4,22 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <title>My First NodeJS web server</title>
+  <link rel="stylesheet" type="text/css" href="../public/index.css">
   <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <p id='logged-in-message'>Steam Login</p>
+  <header>
+  <div id='header-region' class='container-fluid'>
+  <div id='logged-in-message'>
+  Steam Login
+  </div>
+  <div id='login-region' class='container-fluid'>
   <div id='login-fields'>
     <input id="username" type="text">
     <input id="password" type="text">
   </div>
   <div id='login-submit'>
-    <button id='test-button'>Login</button>
+    <button id='login-button' class='btn btn-primary btn-md'>Login</button>
   </div>
-  <button id='counter-button'>YEET</button>
-  <script src="app.js"></script>
+  </div>
+  </div>
+  </header>
+  <div class='container'>
+    <button id='counter-button'>YEET</button>
+  </div>
+  <!-- <script src="app.js"></script> -->
 </body>
 
 </html>
