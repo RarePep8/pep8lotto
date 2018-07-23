@@ -16,7 +16,7 @@ window.onload = function() {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
       // Trigger the button element with a click
-      document.getElementById("myBtn").click();
+      document.getElementById("login-button").click();
     }
   });
 
