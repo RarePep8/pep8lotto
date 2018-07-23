@@ -29,5 +29,6 @@ window.onload = function() {
     document.getElementById('login-button').onclick = login;
     document.getElementById('login-button').innerText = "login";
   }
+  console.log("hi2");
   document.getElementById('login-button').onclick = login;
 };
