@@ -3,6 +3,26 @@ window.onload = function() {
   console.log(day);
   console.log(year);
   **/
+
+
+  var username_input = document.getElementById('username');
+  var password_input = document.getElementById('password');
+  // Execute a function when the user releases a key on the keyboard
+  username_input.addEventListener("keyup", enter_press_login(event));
+  password_input.addEventListener("keyup", enter_press_login(event));
+  var enter_press_login = function(event) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Trigger the button element with a click
+      document.getElementById("myBtn").click();
+    }
+  });
+
+
+
+
   const verifyPassword = function() {
     if(this.responseText == 'true'){
       document.getElementById('logged-in-message').innerText="Hi " + document.getElementById('username').value;
