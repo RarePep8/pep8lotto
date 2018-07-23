@@ -8,7 +8,7 @@ window.onload = function() {
       document.getElementById('logged-in-message').innerText="Hi " + document.getElementById('username').value;
       document.getElementById('login-fields').style.display = "none";
       document.getElementById('login-button').onclick = logout;
-      document.getElementById('login-button').innerText = "logout";
+      document.getElementById('login-button').innerText = "Logout";
     }
 
   }
@@ -26,7 +26,7 @@ window.onload = function() {
     document.getElementById('username').value = "";
     document.getElementById('password').value = "";
     document.getElementById('login-button').onclick = login;
-    document.getElementById('login-button').innerText = "login";
+    document.getElementById('login-button').innerText = "Login";
   }
   document.getElementById('login-button').onclick = login;
 };

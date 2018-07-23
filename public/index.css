@@ -12,7 +12,8 @@
   float: right;
 }
 #logged-in-message{
-  float: left;
+  display: inline-block;
+  vertical-align: middle;
 }
 #header-region{
   padding-top: 20px;
