@@ -7,8 +7,8 @@ window.onload = function() {
     if(this.responseText == 'true'){
       document.getElementById('logged-in-message').innerText="Hi " + document.getElementById('username').value;
       document.getElementById('login-fields').style.display = "none";
-      document.getElementById('test-button').onclick = logout;
-      document.getElementById('test-button').innerText = "logout";
+      document.getElementById('login-button').onclick = logout;
+      document.getElementById('login-button').innerText = "logout";
     }
 
   }
