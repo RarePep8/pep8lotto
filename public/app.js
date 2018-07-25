@@ -7,7 +7,7 @@ window.onload = function() {
 
   var username_input = document.getElementById('username');
   var password_input = document.getElementById('password');
-  var enter_press_login = function(event) {
+  function enter_press_login(event) {
      console.log("yah yeet");
     // Cancel the default action, if needed
     event.preventDefault();
@@ -16,7 +16,7 @@ window.onload = function() {
       // Trigger the button element with a click
       document.getElementById("login-button").click();
     }
-  };
+  }
   // Execute a function when the user releases a key on the keyboard
   username_input.addEventListener("keyup", enter_press_login(event));
   password_input.addEventListener("keyup", enter_press_login(event));
