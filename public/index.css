@@ -29,6 +29,10 @@
 #main-region{
     padding: 20px;
 }
+#pep8coin-count{
+    width: 25px;
+    height: 25px;
+}
 .navbar-inverse {
     background-color: transparent !important;
     border-style: none !important;
@@ -38,6 +42,7 @@
     border-width: 2px !important;
     transition: 0.2s;
 }
+
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     border-color: white !important;
     background-color: transparent !important;
