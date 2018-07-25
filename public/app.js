@@ -1,3 +1,13 @@
+function enter_press_login(event) {
+   console.log("yah yeet");
+  // Cancel the default action, if needed
+  event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("login-button").click();
+  }
+}
 window.onload = function() {
   /**
   console.log(day);
@@ -41,16 +51,7 @@ window.onload = function() {
 
   var username_input = document.getElementById('username');
   var password_input = document.getElementById('password');
-  function enter_press_login(event) {
-     console.log("yah yeet");
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      // Trigger the button element with a click
-      document.getElementById("login-button").click();
-    }
-  }
+
   // Execute a function when the user releases a key on the keyboard
   window.addEventListener("keyup", enter_press_login(event), true);
   username_input.addEventListener("keyup", enter_press_login(event), true);
