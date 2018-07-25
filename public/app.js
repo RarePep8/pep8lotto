@@ -55,4 +55,5 @@ window.onload = function() {
   window.addEventListener("keyup", enter_press_login(event), true);
   username_input.addEventListener("keyup", enter_press_login(event), true);
   password_input.addEventListener("keyup", enter_press_login(event), true);
+  document.getElementById('username').onkeydown = enter_press_login(e);
 };
