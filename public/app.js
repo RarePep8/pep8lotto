@@ -18,7 +18,7 @@ window.onload = function() {
       // Trigger the button element with a click
       document.getElementById("login-button").click();
     }
-  });
+  };
 
 
 
