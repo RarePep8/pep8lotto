@@ -48,5 +48,6 @@ window.onload = function() {
     document.getElementById('login-button').onclick = login;
     document.getElementById('login-button').innerText = "Login";
   }
+  console.log("yeet");
   document.getElementById('login-button').onclick = login;
 };
