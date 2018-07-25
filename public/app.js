@@ -52,10 +52,10 @@ window.onload = function() {
     }
   }
   // Execute a function when the user releases a key on the keyboard
-  window.addEventListener("keyup", enter_press_login(event), true);
   username_input.addEventListener("keyup", function(event) {
-     enter_press_login(event); 
+     enter_press_login(event);
   });
-  password_input.addEventListener("keyup", enter_press_login(event), true);
-  document.getElementById('username').onkeydown = enter_press_login(event);
+  password_input.addEventListener("keyup", function(event) {
+     enter_press_login(event);
+  });
 };
