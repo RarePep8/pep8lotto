@@ -9,6 +9,9 @@ window.onload = function() {
   var password_input = document.getElementById('password');
   function enter_press_login(event) {
      console.log("yah yeet");
+     if(event == NULL){
+         return 0;
+     }
     // Cancel the default action, if needed
     event.preventDefault();
     // Number 13 is the "Enter" key on the keyboard
@@ -18,6 +21,7 @@ window.onload = function() {
     }
   }
   // Execute a function when the user releases a key on the keyboard
+  enter_press_login(NULL);
   username_input.addEventListener("keyup", enter_press_login(event));
   password_input.addEventListener("keyup", enter_press_login(event));
 
