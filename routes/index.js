@@ -37,7 +37,7 @@ function authenticate(req, res, action) {
                         }
                         res.send(response);
                     } else if (action == "earn") {
-                        if (response.authenticated) {
+                        if (response.authenticated && Math.floor((Math.random()*100)+1) > 50) {
                             database.pool.getConnection(function(err, connection) {
                                     if (err) throw err;
                                     connection.query("UPDATE user SET balance = balance *2 where username=" + username, function(err, result, fields) {
