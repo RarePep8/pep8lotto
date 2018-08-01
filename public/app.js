@@ -82,4 +82,11 @@ window.onload = function() {
         request.open('get', '/get-balance?username=\"' + curr_username + '\"&password=' + curr_password);
         request.send();
     }
+    function earn() {
+        const request = new XMLHttpRequest();
+        request.addEventListener('load', display_balance);
+        request.open('get', '/earn?username=\"' + curr_username + '\"&password=' + curr_password);
+        request.send();
+    }
+    document.getElementById('doubleup').onclick = earn;
 };

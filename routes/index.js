@@ -34,6 +34,16 @@ function authenticate(req, res, action) {
                     response.balance = result[0].balance;
                 }
                 res.send(response);
+            } else if (action == "earn") {
+                if(response.authenticated){
+                    connection.query("UPDATE user SET balance = balance + 1 where username=" + username, function(err, result, fields) {
+                        if (err) throw err;
+                        connection.release();
+
+                    });
+                    response.balance = result[0].balance;
+                    res.send(response);
+                }
             }
         });
     });
