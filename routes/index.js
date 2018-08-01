@@ -8,32 +8,32 @@ app.get('/', function(req, res) {
     });
 });
 
-function authenticate(username, password) {
+function authenticate(req, res, action) {
+    var username = req.param('username');
+    var password = req.param('password');
     var authenticated = false;
     database.pool.getConnection(function(err, connection) {
         if (err) throw err;
-        connection.query("SELECT password FROM user WHERE username=" + username, function(err, result, fields) {
-            if (err) throw err;
-            connection.release();
-            var result_string = (result.length == 0) ? "" : result[0].password;
-            var response = {
-                "verified": (result_string != "") && (result_string == password)
-            };
-            authenticated = (result_string != "") && (result_string == password);
-            console.log(authenticated);
-        });
+        if(action == "login"){
+            connection.query("SELECT password FROM user WHERE username=" + username, function(err, result, fields) {
+                if (err) throw err;
+                connection.release();
+                var result_string = (result.length == 0) ? "" : result[0].password;
+                var response = {
+                    "verified": (result_string != "") && (result_string == password)
+                };
+                authenticated = (result_string != "") && (result_string == password);
+                console.log(authenticated);
+                res.send(authenticated);
+            });
+        }
     });
-    return authenticated;
 }
 app.get('/earn', function(req, res) {
 
 });
 app.get('/login', function(req, res) {
-    var username = req.param('username');
-    var password = req.param('password');
-    var authenticated = authenticate(username, password);
-    console.log(authenticated);
-    res.send(authenticated);
+        var authenticated = authenticate(req, res, "login");
 });
 
 module.exports = app;
