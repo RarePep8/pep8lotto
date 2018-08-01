@@ -34,6 +34,7 @@ app.get('/login', function(req, res) {
     var username = req.param('username');
     var password = req.param('password');
     var authenticated = authenticate(username, password);
+    console.log(authenticated);
     res.send(authenticated);
 });
 
