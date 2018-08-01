@@ -13,7 +13,7 @@
 }
 
 #coin-count-text, #logged-in-message{
-  display: inline-block;
+  display: none;
   vertical-align: middle;
 }
 #header-region{

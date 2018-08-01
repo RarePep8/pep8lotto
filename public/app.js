@@ -10,6 +10,8 @@ window.onload = function() {
     function display_balance() {
         var obj = JSON.parse(this.responseText);
         document.getElementById('coin-count-text').innerText = obj.balance;
+        document.getElementById('coin-count-text').style.display = "inline-block";
+        document.getElementById('pep8coin-count').style.display = "inline-block";
         console.log(obj.balance);
         console.log(this.responseText);
     }
@@ -49,6 +51,8 @@ window.onload = function() {
         document.getElementById('password').value = "";
         document.getElementById('login-button').onclick = login;
         document.getElementById('login-button').innerText = "Login";
+        document.getElementById('coin-count-text').style.display = "none";
+        document.getElementById('pep8coin-count').style.display = "none";
     }
     console.log("yeet");
     document.getElementById('login-button').onclick = login;
