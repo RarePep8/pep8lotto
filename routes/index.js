@@ -23,7 +23,7 @@ function authenticate(req, res, action) {
             };
             var response = {
                 authenticated: false,
-                balance: null;
+                balance: null
             }
             response.authenticated = (result_string != "") && (result_string == password);
             if(action == "login") {
