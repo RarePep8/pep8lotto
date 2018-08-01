@@ -4,7 +4,7 @@ window.onload = function() {
   console.log(year);
   **/
 
-  function displayBalance(){
+  function display_balance(){
       console.log(this.responseText);
   }
 
