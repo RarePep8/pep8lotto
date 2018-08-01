@@ -58,4 +58,7 @@ window.onload = function() {
   password_input.addEventListener("keyup", function(event) {
      enter_press_login(event);
   });
+
+  // Query user balance constantly
+  
 };
