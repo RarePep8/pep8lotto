@@ -25,11 +25,11 @@ window.onload = function() {
             curr_username = document.getElementById('username').value;
             curr_password = document.getElementById('password').value;
             curr_authenticated = true;
-            update_balance();
             document.getElementById('logged-in-message').innerText = "Hi " + document.getElementById('username').value;
             document.getElementById('login-fields').style.display = "none";
             document.getElementById('login-button').onclick = logout;
             document.getElementById('login-button').innerText = "Logout";
+            update_balance();
         }
 
     }
