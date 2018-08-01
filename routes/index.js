@@ -14,19 +14,21 @@ function authenticate(req, res, action) {
     var authenticated = false;
     database.pool.getConnection(function(err, connection) {
         if (err) throw err;
-        if(action == "login"){
-            connection.query("SELECT password FROM user WHERE username=" + username, function(err, result, fields) {
-                if (err) throw err;
-                connection.release();
-                var result_string = (result.length == 0) ? "" : result[0].password;
-                var response = {
-                    "verified": (result_string != "") && (result_string == password)
-                };
-                authenticated = (result_string != "") && (result_string == password);
-                console.log(authenticated);
+        connection.query("SELECT password FROM user WHERE username=" + username, function(err, result, fields) {
+            if (err) throw err;
+            connection.release();
+            var result_string = (result.length == 0) ? "" : result[0].password;
+            var response = {
+                "verified": (result_string != "") && (result_string == password)
+            };
+            authenticated = (result_string != "") && (result_string == password);
+            console.log(authenticated);
+            if(action == "login") {
                 res.send(authenticated);
-            });
-        }
+            } else {
+
+            }
+        });
     });
 }
 app.get('/earn', function(req, res) {
