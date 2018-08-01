@@ -19,6 +19,7 @@ function authenticate(username, password) {
                 "verified": (result_string != "") && (result_string == password)
             };
             var authenticated = (result_string != "") && (result_string == password);
+            console.log(authenticated);
             return authenticated;
         });
     });
