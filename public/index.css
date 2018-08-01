@@ -11,7 +11,8 @@
 #login-region{
   float: right;
 }
-#logged-in-message{
+
+#coin-count-text, #logged-in-message{
   display: inline-block;
   vertical-align: middle;
 }
