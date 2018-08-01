@@ -8,7 +8,8 @@ window.onload = function() {
     **/
 
     function display_balance() {
-        document.getElementById('coin-count-text').innerText = this.responseText.balance;
+        var obj = JSON.parse(this.responseText);
+        document.getElementById('coin-count-text').innerText = obj.balance;
         console.log(this.responseText.balance);
         console.log(this.responseText);
     }
