@@ -9,6 +9,7 @@ app.get('/', function(req, res) {
 });
 
 function authenticate(username, password) {
+    var authenticated = false;
     database.pool.getConnection(function(err, connection) {
         if (err) throw err;
         connection.query("SELECT password FROM user WHERE username=" + username, function(err, result, fields) {
@@ -18,7 +19,7 @@ function authenticate(username, password) {
             var response = {
                 "verified": (result_string != "") && (result_string == password)
             };
-            var authenticated = (result_string != "") && (result_string == password);
+            authenticated = (result_string != "") && (result_string == password);
             console.log(authenticated);
         });
     });
