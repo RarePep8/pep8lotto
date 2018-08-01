@@ -32,6 +32,7 @@ function authenticate(req, res, action) {
                 if(response.authenticated) {
                     response.balance = result[0].balance;
                 }
+                console.log(response);
                 res.send(response);
             }
         });
