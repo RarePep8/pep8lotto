@@ -32,6 +32,7 @@ function authenticate(req, res, action) {
             } else if (action == "get-balance"){
                 if(response.authenticated) {
                     response.balance = result[0].balance;
+                    console.log(response);
                 }
                 res.send(response);
             } else if (action == "earn") {
@@ -39,9 +40,9 @@ function authenticate(req, res, action) {
                     connection.query("UPDATE user SET balance = balance + 1 where username=" + username, function(err, result, fields) {
                         if (err) throw err;
                         connection.release();
-
+                        console.log(response);
+                        res.send(response.authenticated);
                     });
-                    res.send(response.authenticated);
                 }
             }
         });
