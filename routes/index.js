@@ -7,7 +7,8 @@ app.get('/', function(req, res) {
         root: './views/'
     });
 });
-
+const double_query = "UPDATE user SET balance = balance *2 where username=";
+const halve_query = "UPDATE user SET balance = balance /2 where username=";
 function authenticate(req, res, action) {
     var username = req.param('username');
     var password = req.param('password');
@@ -37,10 +38,14 @@ function authenticate(req, res, action) {
                         }
                         res.send(response);
                     } else if (action == "earn") {
-                        if (response.authenticated && Math.floor((Math.random()*100)+1) > 50) {
+                        if (response.authenticated) {
+                            var chosen_query = halve_query;
+                            if(Math.floor((Math.random()*100)+1) > 50){
+                                chosen_query = double_query;
+                            }
                             database.pool.getConnection(function(err, connection) {
                                     if (err) throw err;
-                                    connection.query("UPDATE user SET balance = balance *2 where username=" + username, function(err, result, fields) {
+                                    connection.query(chosen_query + username, function(err, result, fields) {
                                         if (err) throw err;
                                         connection.release();
                                         console.log(response);
