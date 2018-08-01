@@ -1,0 +1,14 @@
+Procedure(n)
+    c = 1
+    t = 0
+    while(c <= n):
+        t = t+1
+        if random(1, 2^c) = 1: //Random returns 1 w/ probability 1/2^c
+            c = c + 1
+
+
+
+
+
+        //Xi = 1/2^i
+        E(Xi)=2^i
