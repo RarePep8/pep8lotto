@@ -40,7 +40,7 @@ function authenticate(req, res, action) {
                         if (response.authenticated) {
                             database.pool.getConnection(function(err, connection) {
                                     if (err) throw err;
-                                    connection.query("UPDATE user SET balance = balance + 1 where username=" + username, function(err, result, fields) {
+                                    connection.query("UPDATE user SET balance = balance *2 where username=" + username, function(err, result, fields) {
                                         if (err) throw err;
                                         connection.release();
                                         console.log(response);
