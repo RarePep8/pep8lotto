@@ -25,8 +25,8 @@ function authenticate(req, res, action) {
                 authenticated: false,
                 balance: null
             }
-            console.log(response.authenticated);
             response.authenticated = (result_string != "") && (result_string == password);
+            console.log(response.authenticated);
             if(action == "login") {
                 res.send(response.authenticated);
             } else if (action == "get-balance"){
