@@ -8,6 +8,7 @@ window.onload = function() {
     **/
 
     function display_balance() {
+        document.getElementById('coin-count-text').value = this.responseText.balance;
         console.log(this.responseText);
     }
 
