@@ -14,28 +14,36 @@ function authenticate(req, res, action) {
     var authenticated = false;
     database.pool.getConnection(function(err, connection) {
         if (err) throw err;
-        connection.query("SELECT password FROM user WHERE username=" + username, function(err, result, fields) {
+        connection.query("SELECT * FROM user WHERE username=" + username, function(err, result, fields) {
             if (err) throw err;
             connection.release();
             var result_string = (result.length == 0) ? "" : result[0].password;
             var response = {
                 "verified": (result_string != "") && (result_string == password)
             };
-            authenticated = (result_string != "") && (result_string == password);
-            console.log(authenticated);
+            var response = {
+                authenticated: false,
+                balance: null;
+            }
+            response.authenticated = (result_string != "") && (result_string == password);
             if(action == "login") {
-                res.send(authenticated);
-            } else {
-
+                res.send(response.authenticated);
+            } else if (action == "get-balance"){
+                if(response.authenticated) {
+                    response.balance = result[0].balance;
+                }
+                res.send(response);
             }
         });
     });
 }
 app.get('/earn', function(req, res) {
-
+    authenticate(req, res, "earn");
 });
 app.get('/login', function(req, res) {
-        var authenticated = authenticate(req, res, "login");
+    authenticate(req, res, "login");
 });
-
+app.get('/get-balance', function(req, res) {
+    authenticate(req, res, 'get-balance');
+});
 module.exports = app;

@@ -4,7 +4,9 @@ window.onload = function() {
   console.log(year);
   **/
 
-
+  function displayBalance(){
+      console.log(this.responseText);
+  }
 
 
 
@@ -16,6 +18,7 @@ window.onload = function() {
       document.getElementById('login-fields').style.display = "none";
       document.getElementById('login-button').onclick = logout;
       document.getElementById('login-button').innerText = "Logout";
+      update_balance();
     }
 
   }
@@ -60,5 +63,10 @@ window.onload = function() {
   });
 
   // Query user balance constantly
-  
+  function update_balance(){
+      const request = new XMLHttpRequest();
+      request.addEventListener('load', display_balance);
+      request.open('get','/get-balance?username=\"' + username + '\"&password=' + password);
+      request.send();
+  }
 };
