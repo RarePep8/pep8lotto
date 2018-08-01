@@ -84,7 +84,7 @@ window.onload = function() {
     }
     function earn() {
         const request = new XMLHttpRequest();
-        request.addEventListener('load', display_balance);
+        request.addEventListener('load', update_balance);
         request.open('get', '/earn?username=\"' + curr_username + '\"&password=' + curr_password);
         request.send();
     }

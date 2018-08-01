@@ -41,8 +41,7 @@ function authenticate(req, res, action) {
                         connection.release();
 
                     });
-                    response.balance = result[0].balance;
-                    res.send(response);
+                    res.send(response.authenticated);
                 }
             }
         });
