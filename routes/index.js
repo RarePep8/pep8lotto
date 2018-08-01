@@ -20,9 +20,9 @@ function authenticate(username, password) {
             };
             var authenticated = (result_string != "") && (result_string == password);
             console.log(authenticated);
-            return authenticated;
         });
     });
+    return authenticated;
 }
 app.get('/earn', function(req, res) {
 
