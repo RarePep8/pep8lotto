@@ -14,11 +14,11 @@ window.onload = function() {
 
   const verifyPassword = function() {
     if(this.responseText == 'true'){
+      update_balance();
       document.getElementById('logged-in-message').innerText="Hi " + document.getElementById('username').value;
       document.getElementById('login-fields').style.display = "none";
       document.getElementById('login-button').onclick = logout;
       document.getElementById('login-button').innerText = "Logout";
-      update_balance();
     }
 
   }

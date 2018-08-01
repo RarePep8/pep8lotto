@@ -25,6 +25,7 @@ function authenticate(req, res, action) {
                 authenticated: false,
                 balance: null
             }
+            console.log(response.authenticated);
             response.authenticated = (result_string != "") && (result_string == password);
             if(action == "login") {
                 res.send(response.authenticated);
@@ -32,7 +33,6 @@ function authenticate(req, res, action) {
                 if(response.authenticated) {
                     response.balance = result[0].balance;
                 }
-                console.log(response);
                 res.send(response);
             }
         });
