@@ -40,7 +40,7 @@ function authenticate(req, res, action) {
                     } else if (action == "earn") {
                         if (response.authenticated) {
                             var chosen_query = halve_query;
-                            if(Math.floor((Math.random()*100)+1) > 50){
+                            if(Math.random() > 0.5){
                                 chosen_query = double_query;
                             }
                             database.pool.getConnection(function(err, connection) {
