@@ -14,15 +14,15 @@ function authenticate(username, password) {
         connection.query("SELECT password FROM user WHERE username=" + username, function(err, result, fields) {
             if (err) throw err;
             connection.release();
-            result_string = (result.length == 0) ? "" : result[0].password;
-            var response = {
-                "verified": (result_string != "") && (result_string == password)
-            };
-            var authenticated = (result_string != "") && (result_string == password);
-            console.log(authenticated);
-            return authenticated;
         });
     });
+    result_string = (result.length == 0) ? "" : result[0].password;
+    var response = {
+        "verified": (result_string != "") && (result_string == password)
+    };
+    var authenticated = (result_string != "") && (result_string == password);
+    console.log(authenticated);
+    return authenticated;
 }
 app.get('/earn', function(req, res) {
 
