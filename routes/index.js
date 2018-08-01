@@ -14,11 +14,7 @@ function authenticate(username, password) {
         connection.query("SELECT password FROM user WHERE username=" + username, function(err, result, fields) {
             if (err) throw err;
             connection.release();
-            console.log(result);
             result_string = (result.length == 0) ? "" : result[0].password;
-            console.log(result_string);
-            console.log(password);
-            console.log((result_string != "") && (result_string == password));
             var response = {
                 "verified": (result_string != "") && (result_string == password)
             };
