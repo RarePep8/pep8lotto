@@ -92,5 +92,9 @@ window.onload = function() {
         request.open('get', '/earn?username=\"' + curr_username + '\"&password=' + curr_password);
         request.send();
     }
+    function test() {
+      console.log("You got Awp | Dragon Lore!!!");
+    }
     document.getElementById('doubleup').onclick = earn;
+    document.getElementById('horizon-case').onclick = test;
 };

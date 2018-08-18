@@ -51,6 +51,13 @@
 .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: #ff0066 !important;
 }
+.case-images{
+  transition: all 0.8s;
+}
+.case-images:hover {
+  height: 290px;
+  width: 290px;
+}
 body {
   font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
   color: white ;
