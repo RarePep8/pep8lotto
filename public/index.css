@@ -12,7 +12,7 @@
   float: right;
 }
 
-#coin-count-text, #logged-in-message{
+#pep8coin-count, #coin-count-text, #logged-in-message{
   display: none;
   vertical-align: middle;
 }
