@@ -1,14 +1,12 @@
-#login-fields{
+#login-fields, #login-submit, #username, #password{
   display: inline-block;
 }
-#login-submit{
-  display: inline-block;
-}
+
 #login-button{
   border-radius: 15px;
   outline: none;
 }
-#login-region{
+#login-region {
   float: right;
 }
 
@@ -39,18 +37,28 @@
     border-style: none !important;
     border-radius: 0px !important;
 }
-.pep8btn{
+/* .pep8btn, .pep8btn-hover, .pep8btn:active, .pep8btn:visited{
     border-width: 2px !important;
     transition: 0.2s;
-}
-
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     border-color: white !important;
     background-color: transparent !important;
 }
-.btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+.pep8btn:hover, .pep8btn:active, .pep8btn:visited{
     background-color: #ff0066 !important;
+} */
+
+.btn-primary {
+  border-style: none !important;
+  background-color: black !important;
 }
+.btn-primary:focus, .btn-primary:active {
+  box-shadow: none!important;
+}
+.card-img-top{
+  border-bottom: solid;
+  border-color: grey;
+}
+
 .case-images{
   cursor: pointer;
   transition: all 0.8s;
@@ -77,10 +85,23 @@
   overflow-y: hidden;
   white-space: nowrap;
 }
-.card {
-  display: inline-block;
+.card{
+  display: inline-block !important;
 }
-
+.case-red{
+  height: 50px;
+  width: 50px;
+  border: 1px solid rgba(220,20,60,1);
+  background: linear-gradient(rgba(220,20,60,0.3),rgba(220,20,60, 1));
+  border-image: linear-gradient(rgba(220,20,60,0.3),rgba(220,20,60, 1)) 20 stretch;
+}
+.case-pink{
+  height: 50px;
+  width: 50px;
+  border: 1px solid rgba(219,43,172,1);
+  background: linear-gradient(rgba(219,43,172,0.3),rgba(219,43,172,1));
+  border-image: linear-gradient(rgba(219,43,172,0.3),rgba(219,43,172,1)) 20 stretch;
+}
 body {
   font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
   color: white ;

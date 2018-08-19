@@ -96,5 +96,5 @@ window.onload = function() {
       console.log("You got Awp | Dragon Lore!!!");
     }
     document.getElementById('doubleup').onclick = earn;
-    document.getElementById('horizon-case').onclick = test;
+    //document.getElementById('horizon-case').onclick = test;
 };

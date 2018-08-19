@@ -6,17 +6,18 @@
   <title>My First NodeJS web server</title>
   <link rel="stylesheet" type="text/css" href="../public/index.css">
   <link rel="stylesheet" type="text/css" href="index.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <header>
   <nav class="navbar navbar-inverse">
   <div id='header-region' class='container-fluid'>
+  <div class='container-fluid'>
   HIIIIIIIIIII
-  <div id='login-region' class='container-fluid'>
+  <div  id='login-region'>
   <div id='logged-in-message'>
   </div>
   <div id='login-fields'>
@@ -28,23 +29,34 @@
   </div>
   </div>
   </div>
+  </div>
       <hr style='margin:0;'>
 </nav>
 <img id='pep8coin-count' src="img/pep8coin.png">
 <div id='coin-count-text'></div>
   </header>
-  <div id='main-region' class='container'>
-    <span id='doubleup' class="btn btn-primary pep8btn">2X</span>
-    <button id='counter-button'>YEET</button>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="#" alt="Card image cap">
+
+  <div class="container-fluid">
+  <div class="card" style="width: 320px;">
+    <img class="card-img-top" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFUwnfbOdDgavYXukYTZkqf2ZbrTwmkE6scgj7CY94ml3FXl-ENkMW3wctOLMlhpVHKV9YA/360fx360f" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">Horizon Case</h5>
+      <p class="card-text">
+        <img class="case-red" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJegJM6dO4q5KCk_LmDLfYkWNF18lwmO7Eu9Wn2A3l8kE-Zmj3d4LAIQ82YFzWqFW5xem70MW078jNyXUysycltnfD30vgEgITXkM/360fx360f">
+        <img class="case-red" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PTbTjlH7du6kb-KkPDmNqjCmXlu5Mx2gv3--Y3nj1H6_kI6NTv7I9CVcVdrYQzTqVW4xrrrgZe-6p6ay3ZluiYl4nvVyhO21QYMMLLk7OGppA/360fx360f">
+        <img class="case-pink" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITfn2xZ_MhwmOz--YXygECLpxIuNDztIo7Aeg88NArUrgTqkLrnhZ--vJiYzCQ3uiZ05HjYnRyw1RkeO-Q81-veFwt66J3oZg/360fx360f">
+        <img class="case-pink" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3cih9_92hkYSEkfHLN77HmX5D7ddOhuDG_ZjKhFWmrBZyN2HwIoPAcwU9Y1iG-FHrk-vsh8e-6JjIyXs2u3Zx5nrYmRfl0htLaPsv26Kpbyi1cA/360fx360f">
+        <img class="case-pink" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRf0Ob3dzxP7c-Jm5eHqPjmMrXWk1Rd4cJ5ntbN9J7yjRrjqBFvMmH1cIWTcQc5ZFvQ81e6l-rv0ZC67prMzHVrs3R34iyMlx3mn1gSOSgHu13v/360fx360f">
+
+      </p>
+      <a class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
+</div>
+<div id='main-region' class='container'>
+  <span id='doubleup' class="btn btn-primary pep8btn">2X</span>
+  <button id='counter-button'>YEET</button>
+</div>
   <!-- <div class="cases">
     <img class="case-images" id="horizon-case" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFUwnfbOdDgavYXukYTZkqf2ZbrTwmkE6scgj7CY94ml3FXl-ENkMW3wctOLMlhpVHKV9YA/360fx360f" width="300" height="300">
   </div>
