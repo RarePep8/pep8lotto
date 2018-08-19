@@ -52,12 +52,35 @@
     background-color: #ff0066 !important;
 }
 .case-images{
+  cursor: pointer;
   transition: all 0.8s;
+}
+.cases{
+  display: inline-block;
+  border-style: solid;
+  border-radius: 5px;
+  height: 400px;
+  width: 400px;
 }
 .case-images:hover {
   height: 290px;
   width: 290px;
+
 }
+.case-images:active {
+  transition: all 0.1s;
+  height: 275px;
+  width: 275px;
+}
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.card {
+  display: inline-block;
+}
+
 body {
   font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
   color: white ;
