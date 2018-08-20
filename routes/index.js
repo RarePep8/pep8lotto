@@ -53,6 +53,8 @@ function authenticate(req, res, action) {
                                     });
                                 });
                             }
+                        } else if (action == "open-horizon" && response.authenticated) {
+
                         }
                     });
             });
