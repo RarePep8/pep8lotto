@@ -28,7 +28,7 @@
 #main-region{
     padding: 20px;
 }
-#pep8coin-count{
+.pep8coin-count{
     width: 25px;
     height: 25px;
 }
@@ -49,7 +49,8 @@
 
 .btn-primary {
   border-style: none !important;
-  background-color: black !important;
+  background-color: rgb(255,140,0) !important;
+  color: black !important;
 }
 .btn-primary:focus, .btn-primary:active {
   box-shadow: none!important;
@@ -91,6 +92,7 @@
 .case-red{
   height: 50px;
   width: 50px;
+  margin-top: 3px;
   border: 1px solid rgba(220,20,60,1);
   background: linear-gradient(rgba(220,20,60,0.3),rgba(220,20,60, 1));
   border-image: linear-gradient(rgba(220,20,60,0.3),rgba(220,20,60, 1)) 20 stretch;
@@ -98,13 +100,29 @@
 .case-pink{
   height: 50px;
   width: 50px;
+  margin-top: 3px;
   border: 1px solid rgba(219,43,172,1);
   background: linear-gradient(rgba(219,43,172,0.3),rgba(219,43,172,1));
   border-image: linear-gradient(rgba(219,43,172,0.3),rgba(219,43,172,1)) 20 stretch;
 }
+.case-purple{
+  height: 50px;
+  width: 50px;
+  margin-top: 3px;
+  border: 1px solid rgb(106,90,205, 1);
+  background: linear-gradient(rgb(106,90,205, 0.3),rgb(106,90,205, 1));
+  border-image: linear-gradient(rgb(106,90,205, 0.3),rgb(106,90,205, 1)) 20 stretch;
+}
+.case-blue{
+  height: 50px;
+  width: 50px;
+  margin-top: 3px;
+  border: 1px solid rgb(65,105,225, 1);
+  background: linear-gradient(rgb(65,105,225, 0.3),rgb(65,105,225, 1));
+  border-image: linear-gradient(rgb(65,105,225, 0.3),rgb(65,105,225, 1)) 20 stretch;
+}
 body {
   font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
-  color: white ;
   background: url("img/bg-pattern.png"), #7b4397;
   background: url("img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
   background: url("img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
