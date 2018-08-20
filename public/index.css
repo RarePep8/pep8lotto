@@ -28,9 +28,9 @@
 #main-region{
     padding: 20px;
 }
-.pep8coin-count{
-    width: 25px;
-    height: 25px;
+.pep8coin{
+  width: 25px;
+  height: 25px;
 }
 .navbar-inverse {
     background-color: transparent !important;
