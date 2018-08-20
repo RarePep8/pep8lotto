@@ -66,4 +66,7 @@ function authenticate(req, res, action) {
     app.get('/get-balance', function(req, res) {
         authenticate(req, res, 'get-balance');
     });
+    app.get('/open-horizon', function(req, res) {
+        authenticate(req, res, 'open-horizon');
+    });
     module.exports = app;
