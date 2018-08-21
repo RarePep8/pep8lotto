@@ -56,6 +56,7 @@ window.onload = function() {
         document.getElementById('login-button').innerText = "Login";
         document.getElementById('coin-count-text').style.display = "none";
         document.getElementById('pep8coin-count').style.display = "none";
+        document.getElementById('header-region').style.display = "none";
     }
     console.log("yeet");
     document.getElementById('login-button').onclick = login;
