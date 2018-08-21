@@ -1,7 +1,7 @@
 window.onload = function() {
   var horizonItems = [{"name":"Code Red",
                           "url":{"factoryNew":"https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJegJM6dO4q5KCk_LmDLfYkWNF18lwmO7Eu9Wn2A3l8kE-Zmj3d4LAIQ82YFzWqFW5xem70MW078jNyXUysycltnfD30vgEgITXkM/360fx360f"}}];
-    console.log(horizon-items[0].url.factoryNew);
+    console.log(horizonItems[0].url.factoryNew);
     var curr_username;
     var curr_password;
     var curr_authenticated;
