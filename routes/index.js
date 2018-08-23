@@ -115,6 +115,7 @@ function authenticate(req, res, action) {
             response.itemUrl = basicRareItems[itemInt].url;
             console.log("You got " + response.itemName);
           }
+          res.send(response);
         }
       });
   });

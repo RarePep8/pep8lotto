@@ -96,10 +96,14 @@ window.onload = function() {
     request.send();
   }
 
+  function update_inventory() {
+    console.log(this.responseText);
+  }
+
   function openBasic() {
     console.log("You got Awp | Dragon Lore!!!");
     const request = new XMLHttpRequest();
-    request.addEventListener('load', update_balance);
+    request.addEventListener('load', update_inventory);
     request.open('get', '/open-basic?username=\"' + curr_username +
       '\"&password=' + curr_password);
     request.send();
