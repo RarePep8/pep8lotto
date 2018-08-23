@@ -122,6 +122,14 @@
   background: linear-gradient(rgb(65,105,225, 0.3),rgb(65,105,225, 1));
   border-image: linear-gradient(rgb(65,105,225, 0.3),rgb(65,105,225, 1)) 20 stretch;
 }
+.case-light-blue{
+  height: 50px;
+  width: 50px;
+  margin-top: 3px;
+  border: 1px solid rgb(135,206,250, 1);
+  background: linear-gradient(rgb(135,206,250, 0.3),rgb(135,206,250, 1));
+  border-image: linear-gradient(rgb(135,206,250, 0.3),rgb(135,206,250, 1)) 20 stretch;
+}
 body {
   font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
   background: url("img/bg-pattern.png"), #7b4397;
