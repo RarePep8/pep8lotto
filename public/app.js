@@ -1,5 +1,4 @@
 window.onload = function() {
-  console.log(items[0].url);
   var curr_username;
   var curr_password;
   var curr_authenticated;
