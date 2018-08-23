@@ -104,7 +104,7 @@ function authenticate(req, res, action) {
           }
         } else if (action == "open-basic" && response.authenticated) {
           var rarityInt = Math.random();
-          if (randInt < 0.5) {
+          if (rarityInt < 0.5) {
             var itemInt = Math.floor(Math.random() * 7);
             response.itemName = basicUncommonItems[itemInt].name;
             response.itemUrl = basicUncommonItems[itemInt].url;
