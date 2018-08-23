@@ -101,7 +101,6 @@ window.onload = function() {
   }
 
   function openBasic() {
-    console.log("You got Awp | Dragon Lore!!!");
     const request = new XMLHttpRequest();
     request.addEventListener('load', update_inventory);
     request.open('get', '/open-basic?username=\"' + curr_username +
