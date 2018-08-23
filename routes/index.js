@@ -51,6 +51,10 @@ var items = [{
 
 const double_query = "UPDATE user SET balance = balance *2 where username=";
 const halve_query = "UPDATE user SET balance = balance /2 where username=";
+const increase_quantity_query1 =
+  "INSERT INTO user_item_pair (user_id,item_id,item_quantity) VALUES (";
+const increase_quantity_query2 =
+  ",1)ON DUPLICATE KEY UPDATE item_quantity = item_quantity + 1";
 
 function authenticate(req, res, action) {
   var username = req.param('username');
@@ -63,6 +67,7 @@ function authenticate(req, res, action) {
         if (err) throw err;
         connection.release();
         console.log(result);
+        var userId = result[0].user_id;
         var result_string = (result.length == 0) ? "" : result[0].password;
         var response = {
           "verified": (result_string != "") && (result_string ==
@@ -112,7 +117,17 @@ function authenticate(req, res, action) {
           response.itemName = items[itemInt].name;
           response.itemUrl = items[itemInt].url;
           console.log("You got " + response.itemName);
-          res.send(response);
+          database.pool.getConnection(function(err, connection) {
+            if (err) throw err;
+            connection.query(increase_quantity_query1 + userId + "," +
+              itemInt + increase_quantity_query2,
+              function(err,
+                result, fields) {
+                if (err) throw err;
+                connection.release();
+                res.send(response);
+              });
+          });
         }
       });
   });
