@@ -3,9 +3,7 @@ var app = express()
 var database = require('../database');
 app.use(express.static('/../public'));
 app.get('/', function(req, res) {
-    res.sendFile('index.html', {
-        root: './views/'
-    });
+    res.sendFile('index.html');
 });
 const double_query = "UPDATE user SET balance = balance *2 where username=";
 const halve_query = "UPDATE user SET balance = balance /2 where username=";
