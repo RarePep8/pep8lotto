@@ -6,48 +6,48 @@ app.get('/', function(req, res) {
   res.sendFile('index.html');
 });
 var items = [{
-      "name": "Slime Green Block",
-      "url": "img/block_1.png"
-    }, {
-      "name": "Yellow Block",
-      "url": "img/block_2.png"
-    }, {
-      "name": "Green Block",
-      "url": "img/block_3.png"
-    }, {
-      "name": "Blue Block",
-      "url": "img/block_4.png"
-    }, {
-      "name": "Purple Block",
-      "url": "img/block_5.png"
-    }, {
-      "name": "Pink Block",
-      "url": "img/block_6.png"
-    }, {
-      "name": "Cyan Block",
-      "url": "img/block_7.png"
-    }, "name": "Slime Green Checker Block",
-    "url": "img/block_8.png"
-  },
-  {
-    "name": "Yellow Checker Block",
-    "url": "img/block_9.png"
-  }, {
-    "name": "Green Checker Block",
-    "url": "img/block_10.png"
-  }, {
-    "name": "Blue Checker Block",
-    "url": "img/block_11.png"
-  }, {
-    "name": "Purple Checker Block",
-    "url": "img/block_12.png"
-  }, {
-    "name": "Pink Checker Block",
-    "url": "img/block_13.png"
-  }, {
-    "name": "Cyan Checker Block",
-    "url": "img/block_14.png"
-  }];
+  "name": "Slime Green Block",
+  "url": "img/block_1.png"
+}, {
+  "name": "Yellow Block",
+  "url": "img/block_2.png"
+}, {
+  "name": "Green Block",
+  "url": "img/block_3.png"
+}, {
+  "name": "Blue Block",
+  "url": "img/block_4.png"
+}, {
+  "name": "Purple Block",
+  "url": "img/block_5.png"
+}, {
+  "name": "Pink Block",
+  "url": "img/block_6.png"
+}, {
+  "name": "Cyan Block",
+  "url": "img/block_7.png"
+}, {
+  "name": "Slime Green Checker Block",
+  "url": "img/block_8.png"
+}, {
+  "name": "Yellow Checker Block",
+  "url": "img/block_9.png"
+}, {
+  "name": "Green Checker Block",
+  "url": "img/block_10.png"
+}, {
+  "name": "Blue Checker Block",
+  "url": "img/block_11.png"
+}, {
+  "name": "Purple Checker Block",
+  "url": "img/block_12.png"
+}, {
+  "name": "Pink Checker Block",
+  "url": "img/block_13.png"
+}, {
+  "name": "Cyan Checker Block",
+  "url": "img/block_14.png"
+}];
 
 const double_query = "UPDATE user SET balance = balance *2 where username=";
 const halve_query = "UPDATE user SET balance = balance /2 where username=";
