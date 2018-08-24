@@ -1,7 +1,7 @@
 window.onload = function() {
-  var curr_username;
-  var curr_password;
-  var curr_authenticated;
+  var currUsername;
+  var currPassword;
+  var currAuthenticated;
   /**
   console.log(day);
   console.log(year);
@@ -20,11 +20,11 @@ window.onload = function() {
 
   const verifyPassword = function() {
     if (this.responseText == 'true') {
-      curr_username = document.getElementById('username').value;
-      curr_password = document.getElementById('password').value;
-      curr_authenticated = true;
+      currUsername = document.getElementById('username').value;
+      currPassword = document.getElementById('password').value;
+      currAuthenticated = true;
       document.getElementById('logged-in-message').innerText = "Hi " +
-        curr_username;
+        currUsername;
       document.getElementById('login-fields').style.display = "none";
       document.getElementById('login-button').onclick = logout;
       document.getElementById('login-button').innerText = "Logout";
@@ -42,9 +42,9 @@ window.onload = function() {
     request.send();
   }
   var logout = function() {
-    curr_authenticated = false;
-    curr_username = null;
-    curr_password = null;
+    currAuthenticated = false;
+    currUsername = null;
+    currPassword = null;
     document.getElementById('logged-in-message').innerText = ""
     document.getElementById('login-fields').style.display = "inline-block";
     document.getElementById('username').value = "";
@@ -83,16 +83,16 @@ window.onload = function() {
   function update_balance() {
     const request = new XMLHttpRequest();
     request.addEventListener('load', display_balance);
-    request.open('get', '/get-balance?username=\"' + curr_username +
-      '\"&password=' + curr_password);
+    request.open('get', '/get-balance?username=\"' + currUsername +
+      '\"&password=' + currPassword);
     request.send();
   }
 
   function earn() {
     const request = new XMLHttpRequest();
     request.addEventListener('load', update_balance);
-    request.open('get', '/earn?username=\"' + curr_username + '\"&password=' +
-      curr_password);
+    request.open('get', '/earn?username=\"' + currUsername + '\"&password=' +
+      currPassword);
     request.send();
   }
 
@@ -101,12 +101,15 @@ window.onload = function() {
   }
 
   function openBasic() {
-    const request = new XMLHttpRequest();
-    request.addEventListener('load', update_inventory);
-    request.open('get', '/open-basic?username=\"' + curr_username +
-      '\"&password=' + curr_password);
-    request.send();
+    if (currAuthenticated) {
+      const request = new XMLHttpRequest();
+      request.addEventListener('load', update_inventory);
+      request.open('get', '/open-basic?username=\"' + currUsername +
+        '\"&password=' + currPassword);
+      request.send();
+    }
   }
+
   document.getElementById('doubleup').onclick = earn;
   document.getElementById('buy-basic-button').onclick = openBasic;
 };
