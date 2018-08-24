@@ -18,7 +18,22 @@
   padding: 15px;
   background: linear-gradient(to left, #7b4397, #dc2430);
 }
-#test{
+.navbar{
+  background: linear-gradient(to left, #7b4397, #dc2430) !important;
+}
+.nav-link{
+  color: black !important;
+}
+.nav-pills .pill-1 .nav-link:not(.active) {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+.nav-pills .pill-1 .nav-link {
+    background-color: orange !important;
+}
+#hidden-stuff{
+  display: none;
+}
+#full-header{
   background: linear-gradient(to left, #7b4397, #dc2430);
   border-bottom: 1px solid;
   border-color: orange;
