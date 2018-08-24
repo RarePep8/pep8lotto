@@ -16,6 +16,12 @@
 }
 #header-region{
   padding: 15px;
+  background: linear-gradient(to left, #7b4397, #dc2430);
+}
+#test{
+  background: linear-gradient(to left, #7b4397, #dc2430);
+  border-bottom: 1px solid;
+  border-color: orange;
 }
 #doubleup{
     width: 300px;
