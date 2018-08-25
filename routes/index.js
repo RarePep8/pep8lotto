@@ -129,25 +129,27 @@ function authenticate(req, res, action) {
               });
           });
         } else if (action == "inventory" && response.authenticated) {
-          database.pool.getConnection(function(err, connection) {
-            if (err) throw err;
-            connection.query(
-              "SELECT item_id, item_quantity FROM user_item_pair WHERE user_id=" +
-              userId,
-              function(err, result, fields) {
-                parseInventoryItems(err, result, fields, res);
-              });
-          });
+          queryInventory(userId, res);
         }
       });
   });
 }
 
-function parseInventoryItems(err, result, fields, res) {
-  if (err) throw err;
-  connection.release();
-  response.raw = result;
-  res.send(response);
+function queryInventory(userId, res) {
+  database.pool.getConnection(function(err, connection) {
+    if (err) throw err;
+    connection.query(
+      "SELECT item_id, item_quantity FROM user_item_pair WHERE user_id=" +
+      userId,
+      function(err, result, fields) {
+        if (err) throw err;
+        connection.release();
+        var response = {
+          raw: result
+        };
+        res.send(response);
+      });
+  });
 }
 app.get('/earn', function(req, res) {
   authenticate(req, res, "earn");
