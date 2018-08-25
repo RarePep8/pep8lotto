@@ -61,109 +61,119 @@ function authenticate(req, res, action) {
   var password = req.param('password');
   var authenticated = false;
   database.pool.getConnection(function(err, connection) {
-    if (err) throw err;
-    connection.query("SELECT * FROM user WHERE username=" + username,
-      function(err, result, fields) {
-        if (err) throw err;
-        connection.release();
-        console.log(result);
-        var userId = result[0].user_id;
-        var result_string = (result.length == 0) ? "" : result[0].password;
-        var response = {
-          "verified": (result_string != "") && (result_string ==
-            password)
-        };
-        var response = {
-          authenticated: false,
-          balance: null,
-          itemName: null,
-          itemUrl: null,
-          raw: null
-        }
-        response.authenticated = (result_string != "") && (result_string ==
-          password);
-        console.log(response.authenticated);
-        if (action == "login") {
-          res.send(response.authenticated);
-        } else if (action == "get-balance") {
-          if (response.authenticated) {
-            response.balance = result[0].balance;
-            console.log(response);
+      if (err) throw err;
+      connection.query("SELECT * FROM user WHERE username=" + username,
+        function(err, result, fields) {
+          if (err) throw err;
+          connection.release();
+          console.log(result);
+          var userId = result[0].user_id;
+          var result_string = (result.length == 0) ? "" : result[0].password;
+          var response = {
+            authenticated: false,
+            balance: null,
+            itemName: null,
+            itemUrl: null,
+            raw: null
           }
-          res.send(response);
-        } else if (action == "earn") {
-          if (response.authenticated) {
-            var chosen_query = halve_query;
-            if (Math.random() > 0.5) {
-              chosen_query = double_query;
+          response.authenticated = (result_string != "") && (result_string ==
+            password);
+          console.log(response.authenticated);
+          if (action == "login") {
+            res.send(response.authenticated);
+          } else if (action == "get-balance") {
+            if (response.authenticated) {
+              response.balance = result[0].balance;
+              console.log(response);
             }
-            database.pool.getConnection(function(err, connection) {
-              if (err) throw err;
-              connection.query(chosen_query + username, function(err,
-                result, fields) {
-                if (err) throw err;
-                connection.release();
-                console.log(response);
-                res.send(response.authenticated);
-              });
-            });
-          }
-        } else if (action == "open-basic" && response.authenticated) {
-          var rarityInt = Math.random();
-          if (rarityInt < 0.75) {
-            var itemInt = Math.floor(Math.random() * 7);
-          } else {
-            var itemInt = Math.floor(Math.random() * 7) + 7;
-          }
-          response.itemName = items[itemInt].name;
-          response.itemUrl = items[itemInt].url;
-          console.log("You got " + response.itemName);
-          database.pool.getConnection(function(err, connection) {
-            if (err) throw err;
-            connection.query(increase_quantity_query1 + userId + "," +
-              itemInt + increase_quantity_query2,
-              function(err, result, fields) {
-                if (err) throw err;
-                connection.release();
-                res.send(response);
-              });
+            res.send(response);
+          } else if (action == "earn" && response.authenticated) {
+            {
+              queryEarn(userId, res);
+            } else if (action == "open-basic" && response.authenticated) {
+              queryOpenBasic(userId, res);
+            } else if (action == "inventory" && response.authenticated) {
+              queryInventory(userId, res);
+            }
           });
-        } else if (action == "inventory" && response.authenticated) {
-          queryInventory(userId, res);
-        }
       });
-  });
-}
+  }
 
-function queryInventory(userId, res) {
-  database.pool.getConnection(function(err, connection) {
-    if (err) throw err;
-    connection.query(
-      "SELECT item_id, item_quantity FROM user_item_pair WHERE user_id=" +
-      userId,
-      function(err, result, fields) {
+  function queryEarn(userId, res) {
+    var chosen_query = halve_query;
+    if (Math.random() > 0.5) {
+      chosen_query = double_query;
+    }
+    database.pool.getConnection(function(err, connection) {
+      if (err) throw err;
+      connection.query(chosen_query + username, function(err,
+        result, fields) {
         if (err) throw err;
         connection.release();
         var response = {
-          raw: result
-        };
-        res.send(response);
+          "authenticated": true
+        }
+        console.log(response);
+        res.send(response.authenticated);
       });
+    });
+  }
+
+  function queryOpenBasic(userId, res) {
+    var rarityInt = Math.random();
+    if (rarityInt < 0.75) {
+      var itemInt = Math.floor(Math.random() * 7);
+    } else {
+      var itemInt = Math.floor(Math.random() * 7) + 7;
+    }
+    var response = {
+      "itemName": items[itemInt].name,
+      "itemUrl": items[itemInt].url
+    }
+    response.itemName = items[itemInt].name;
+    response.itemUrl = items[itemInt].url;
+    console.log("You got " + response.itemName);
+    database.pool.getConnection(function(err, connection) {
+      if (err) throw err;
+      connection.query(increase_quantity_query1 + userId + "," +
+        itemInt + increase_quantity_query2,
+        function(err, result, fields) {
+          if (err) throw err;
+          connection.release();
+          res.send(response);
+        });
+    });
+  }
+
+  function queryInventory(userId, res) {
+    database.pool.getConnection(function(err, connection) {
+      if (err) throw err;
+      connection.query(
+        "SELECT item_id, item_quantity FROM user_item_pair WHERE user_id=" +
+        userId,
+        function(err, result, fields) {
+          if (err) throw err;
+          connection.release();
+          var response = {
+            raw: result
+          };
+          res.send(response);
+        });
+    });
+  }
+  app.get('/earn', function(req, res) {
+    authenticate(req, res, "earn");
   });
-}
-app.get('/earn', function(req, res) {
-  authenticate(req, res, "earn");
-});
-app.get('/login', function(req, res) {
-  authenticate(req, res, "login");
-});
-app.get('/get-balance', function(req, res) {
-  authenticate(req, res, 'get-balance');
-});
-app.get('/open-basic', function(req, res) {
-  authenticate(req, res, 'open-basic');
-});
-app.get('/inventory', function(req, res) {
-  authenticate(req, res, 'inventory');
-});
-module.exports = app;
+  app.get('/login', function(req, res) {
+    authenticate(req, res, "login");
+  });
+  app.get('/get-balance', function(req, res) {
+    authenticate(req, res, 'get-balance');
+  });
+  app.get('/open-basic', function(req, res) {
+    authenticate(req, res, 'open-basic');
+  });
+  app.get('/inventory', function(req, res) {
+    authenticate(req, res, 'inventory');
+  });
+  module.exports = app;
