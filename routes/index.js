@@ -77,7 +77,8 @@ function authenticate(req, res, action) {
           authenticated: false,
           balance: null,
           itemName: null,
-          itemUrl: null
+          itemUrl: null,
+          raw: null
         }
         response.authenticated = (result_string != "") && (result_string ==
           password);
@@ -136,6 +137,7 @@ function authenticate(req, res, action) {
               function(err, result, fields) {
                 if (err) throw err;
                 connection.release();
+                response.raw = result;
                 res.send(response);
               });
           });
