@@ -110,6 +110,37 @@ window.onload = function() {
     }
   }
 
+  function showCasesPage() {
+    document.getElementById('inventory-region').style.display = "none";
+    document.getElementById('cases-region').style.display = "inline-block";
+  }
+
+  function showInventory() {
+    showInventoryPage();
+    fetchInventoryItems();
+  }
+
+  function showInventoryPage() {
+    document.getElementById('inventory-region').style.display =
+      "inline-block";
+    document.getElementById('cases-region').style.display = "none";
+  }
+
+  function fetchInventoryItems() {
+    if (currAuthenticated) {
+      const request = new XMLHttpRequest();
+      request.addEventListener('load', showInventoryItems);
+      request.open('get', '/inventory?username=\"' + currUsername +
+        '\"&password=' + currPassword);
+      request.send();
+    }
+
+    function showInventoryItems() {
+      console.log(this.responseText);
+    }
+  }
   document.getElementById('doubleup').onclick = earn;
   document.getElementById('buy-basic-button').onclick = openBasic;
+  document.getElementById('pills-cases').onclick = showCasesPage;
+  document.getElementById('pills-inventory').onclick = showInventory;
 };

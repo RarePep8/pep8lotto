@@ -33,6 +33,9 @@
 #hidden-stuff{
   display: none;
 }
+#inventory-region{
+  display: none;
+}
 #full-header{
   background: linear-gradient(to left, #7b4397, #dc2430);
   border-bottom: 1px solid;
