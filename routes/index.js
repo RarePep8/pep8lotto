@@ -52,7 +52,7 @@ var items = [{
 const double_query = "UPDATE user SET balance = balance *2 where username=";
 const halve_query = "UPDATE user SET balance = balance /2 where username=";
 const increase_quantity_query1 =
-  "INSERT INTO user_item_pair (user_id,item_id,item_quantity) VALUES (";
+  "INSERT INTO user_item_pair (user_id,item_id,item_rarity,item_quantity) VALUES (";
 const increase_quantity_query2 =
   ",1)ON DUPLICATE KEY UPDATE item_quantity = item_quantity + 1";
 
@@ -122,8 +122,10 @@ function queryOpenBasic(userId, res) {
   var rarityInt = Math.random();
   if (rarityInt < 0.75) {
     var itemInt = Math.floor(Math.random() * 7);
+    rarityInt = 3;
   } else {
     var itemInt = Math.floor(Math.random() * 7) + 7;
+    rarityInt = 4;
   }
   var response = {
     "itemName": items[itemInt].name,
@@ -133,7 +135,7 @@ function queryOpenBasic(userId, res) {
   database.pool.getConnection(function(err, connection) {
     if (err) throw err;
     connection.query(increase_quantity_query1 + userId + "," +
-      itemInt + increase_quantity_query2,
+      itemInt + "," + rarityInt + increase_quantity_query2,
       function(err, result, fields) {
         if (err) throw err;
         connection.release();
@@ -146,7 +148,7 @@ function queryInventory(userId, res) {
   database.pool.getConnection(function(err, connection) {
     if (err) throw err;
     connection.query(
-      "SELECT item_id, item_quantity FROM user_item_pair WHERE user_id=" +
+      "SELECT item_id, item_rarity, item_quantity FROM user_item_pair WHERE user_id=" +
       userId,
       function(err, result, fields) {
         if (err) throw err;
