@@ -132,7 +132,7 @@ function authenticate(req, res, action) {
           database.pool.getConnection(function(err, connection) {
             if (err) throw err;
             connection.query(
-              "SELECT * FROM user_item_pair WHERE user_id=" +
+              "SELECT item_id, item_quantity FROM user_item_pair WHERE user_id=" +
               userId,
               function(err, result, fields) {
                 if (err) throw err;
