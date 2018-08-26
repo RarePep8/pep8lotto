@@ -157,7 +157,8 @@ function queryInventory(userId, res) {
           inventory: result
         };
         console.log(response.inventory);
-        for (var item in response.inventory) {
+        var responseJSON = JSON.stringify(response);
+        for (var item in responseJSON.inventory) {
           console.log(item);
           item.itemUrl = "img/block_1.png";
         }
