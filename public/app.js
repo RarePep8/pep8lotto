@@ -134,11 +134,14 @@ window.onload = function() {
         '\"&password=' + currPassword);
       request.send();
     }
-
-    function showInventoryItems() {
-      console.log(this.responseText);
-    }
   }
+
+  function showInventoryItems() {
+    var itemImage = document.createElement("IMG");
+    itemImage.src = "img/block_1.png"
+    document.getElementById("inventory-region").appendChild(itemImage);
+  }
+
   document.getElementById('doubleup').onclick = earn;
   document.getElementById('buy-basic-button').onclick = openBasic;
   document.getElementById('pills-cases').onclick = showCasesPage;
