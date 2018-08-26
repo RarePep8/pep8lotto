@@ -5,7 +5,7 @@ app.use(express.static('/../public'));
 app.get('/', function(req, res) {
   res.sendFile('index.html');
 });
-var items = [{
+var items = [{}, {
   "name": "Slime Green Block",
   "url": "img/block_1.png"
 }, {
@@ -121,7 +121,7 @@ function queryEarn(userId, res) {
 function queryOpenBasic(userId, res) {
   var rarityInt = Math.random();
   if (rarityInt < 0.75) {
-    var itemInt = Math.floor(Math.random() * 7);
+    var itemInt = Math.floor(Math.random() * 7) + 1;
     rarityInt = 3;
   } else {
     var itemInt = Math.floor(Math.random() * 7) + 7;
@@ -156,6 +156,9 @@ function queryInventory(userId, res) {
         var response = {
           inventory: result
         };
+        for item in response.inventory {
+          item.itemUrl = items[itemInt].url;
+        }
         res.send(response);
       });
   });
