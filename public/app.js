@@ -143,7 +143,7 @@ window.onload = function() {
   function showInventoryItems() {
     var obj = JSON.parse(this.responseText);
     var invList = obj.inventory;
-    for (item in invList) {
+    for (var item in invList) {
       var itemImage = document.createElement("IMG");
       itemImage.src = item.itemUrl;
       itemImage.className = "case-red inventory-items";

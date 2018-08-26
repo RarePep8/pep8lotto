@@ -156,7 +156,7 @@ function queryInventory(userId, res) {
         var response = {
           inventory: result
         };
-        for item in response.inventory {
+        for (var item in response.inventory) {
           item.itemUrl = items[itemInt].url;
         }
         res.send(response);
