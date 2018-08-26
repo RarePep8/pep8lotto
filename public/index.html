@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Pep8 Lotto</title>
-  <link rel="stylesheet" type="text/css" href="../public/index.css">
-  <link rel="stylesheet" type="text/css" href="index.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>Pep8 Lotto</title>
+		<link rel="stylesheet" type="text/css" href="../public/index.css">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+	</head>
 
-<body>
-  <header>
-  <div id='full-header'>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <ul class="nav nav-pills" id="pills-tab" >
-        <li class="nav-item pill-1">
-          <a class="nav-link active" id="pills-cases" data-toggle="pill" href="#"  onclick="showCasesPage();">Cases</a>
-        </li>
-        <li class="nav-item pill-1">
-          <a class="nav-link" id="pills-inventory" data-toggle="pill" href="#" onclick="showInventoryPage();">Inventory</a>
-        </li>
-        </ul>
+	<body>
+		<header>
+			<div id='full-header'>
+				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+					<div class="container-fluid">
+						<ul class="nav nav-pills" id="pills-tab">
+							<li class="nav-item pill-1">
+								<a class="nav-link active" id="pills-cases" data-toggle="pill" href="#" onclick="showCasesPage();">Cases</a>
+							</li>
+							<li class="nav-item pill-1">
+								<a class="nav-link" id="pills-inventory" data-toggle="pill" href="#" onclick="showInventoryPage();">Inventory</a>
+							</li>
+						</ul>
 
-  YEET
-  <div  id='login-region'>
-  <div id='logged-in-message'>
-  </div>
-  <img id="pep8coin-count" class='pep8coin' src="img/pep8coin.png">
-  <div id='coin-count-text'></div>
-  <div id='login-fields'>
-    <input id="username" type="text" class='form-inline input-sm' placeholder='Username'>
-    <input id="password" type="password" class='form-inline input-sm' placeholder='Password'>
-  </div>
-  <div id='login-submit'>
-    <button id='login-button' class='btn btn-primary btn-md pep8btn'>Login</button>
-  </div>
-  </div>
-  </div>
-</div>
-</nav>
+						YEET
+						<div id='login-region'>
+							<div id='logged-in-message'>
+							</div>
+							<img id="pep8coin-count" class='pep8coin' src="img/pep8coin.png">
+							<div id='coin-count-text'></div>
+							<div id='login-fields'>
+								<input id="username" type="text" class='form-inline input-sm' placeholder='Username'>
+								<input id="password" type="password" class='form-inline input-sm' placeholder='Password'>
+							</div>
+							<div id='login-submit'>
+								<button id='login-button' class='btn btn-primary btn-md pep8btn'>Login</button>
+							</div>
+						</div>
+					</div>
+			</div>
+			</nav>
 
-</nav>
-</nav>
-  </header>
-<div id='main-region'>
-  <div id ='cases-region' class="container-fluid">
-  <div class="card" style="width: 320px;">
-    <img class="card-img-top" src="img/chest_1.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Basic Blocks Case</h5>
-      <p class="card-text">
-        <img class="case-blue case-items-small" src="img/block_8.png">
-        <img class="case-blue case-items-small" src="img/block_9.png">
-        <img class="case-blue case-items-small" src="img/block_10.png">
-        <img class="case-blue case-items-small" src="img/block_11.png">
-        <img class="case-blue case-items-small" src="img/block_12.png">
-        <img class="case-blue case-items-small" src="img/block_13.png">
-        <img class="case-light-blue case-items-small" src="img/block_1.png">
-        <img class="case-light-blue case-items-small" src="img/block_2.png">
-        <img class="case-light-blue case-items-small" src="img/block_3.png">
-        <img class="case-light-blue case-items-small" src="img/block_4.png">
-        <img class="case-light-blue case-items-small" src="img/block_5.png">
-        <img class="case-light-blue case-items-small" src="img/block_6.png">
-      </p>
-      <a id='buy-basic-button' class="btn btn-primary">Buy with 10<img class='pep8coin' src="img/pep8coin.png"></a>
-    </div>
-  </div>
-</div>
-<div id='inventory-region'>
-  HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-</div>
-<div id='hidden-stuff'>
-  <span id='doubleup' class="btn btn-primary pep8btn">2X</span>
-  <button id='counter-button'>YEET</button>
-</div>
-</div>
-<script src="app.js"></script>
-</body>
+			</nav>
+			</nav>
+		</header>
+		<div id='main-region'>
+			<div id='cases-region' class="container-fluid">
+				<div class="card" style="width: 320px;">
+					<img class="card-img-top" src="img/chest_1.png" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Basic Blocks Case</h5>
+						<p class="card-text">
+							<img class="case-blue case-items-small" src="img/block_8.png">
+							<img class="case-blue case-items-small" src="img/block_9.png">
+							<img class="case-blue case-items-small" src="img/block_10.png">
+							<img class="case-blue case-items-small" src="img/block_11.png">
+							<img class="case-blue case-items-small" src="img/block_12.png">
+							<img class="case-blue case-items-small" src="img/block_13.png">
+							<img class="case-light-blue case-items-small" src="img/block_1.png">
+							<img class="case-light-blue case-items-small" src="img/block_2.png">
+							<img class="case-light-blue case-items-small" src="img/block_3.png">
+							<img class="case-light-blue case-items-small" src="img/block_4.png">
+							<img class="case-light-blue case-items-small" src="img/block_5.png">
+							<img class="case-light-blue case-items-small" src="img/block_6.png">
+						</p>
+						<a id='buy-basic-button' class="btn btn-primary">Buy with 10
+							<img class='pep8coin' src="img/pep8coin.png">
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id='inventory-region'>
+				HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+			</div>
+			<div id='hidden-stuff'>
+				<span id='doubleup' class="btn btn-primary pep8btn">2X</span>
+				<button id='counter-button'>YEET</button>
+			</div>
+		</div>
+		<script src="app.js"></script>
+	</body>
 
 </html>

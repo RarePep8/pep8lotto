@@ -146,7 +146,7 @@ window.onload = function() {
     for (var index in invList) {
       var itemImage = document.createElement("IMG");
       itemImage.src = invList[index].itemUrl;
-      itemImage.className = "case-red inventory-items";
+      itemImage.className = "case-" + invList[index].itemColor + " inventory-items";
       document.getElementById("inventory-region").appendChild(itemImage);
     }
 
