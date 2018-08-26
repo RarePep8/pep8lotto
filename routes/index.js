@@ -157,7 +157,7 @@ function queryInventory(userId, res) {
           inventory: result
         };
         for (var item in response.inventory) {
-          item.itemUrl = items[itemInt].url;
+          item.itemUrl = items[item.item_id].url;
         }
         res.send(response);
       });
