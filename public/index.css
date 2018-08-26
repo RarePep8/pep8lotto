@@ -121,27 +121,27 @@
 }
 .case-red{
   border: 1px solid rgba(220,20,60,1);
-  background: linear-gradient(rgba(220,20,60,0.3),rgba(220,20,60, 1));
+  background: linear-gradient(rgba(220,20,60,0.3),rgba(220,20,60, 1)), white;
   border-image: linear-gradient(rgba(220,20,60,0.3),rgba(220,20,60, 1)) 20 stretch;
 }
 .case-pink{
   border: 1px solid rgba(219,43,172,1);
-  background: linear-gradient(rgba(219,43,172,0.3),rgba(219,43,172,1));
+  background: linear-gradient(rgba(219,43,172,0.3),rgba(219,43,172,1)), white;
   border-image: linear-gradient(rgba(219,43,172,0.3),rgba(219,43,172,1)) 20 stretch;
 }
 .case-purple{
   border: 1px solid rgb(106,90,205, 1);
-  background: linear-gradient(rgb(106,90,205, 0.3),rgb(106,90,205, 1));
+  background: linear-gradient(rgb(106,90,205, 0.3),rgb(106,90,205, 1)), white;
   border-image: linear-gradient(rgb(106,90,205, 0.3),rgb(106,90,205, 1)) 20 stretch;
 }
 .case-blue{
   border: 1px solid rgb(65,105,225, 1);
-  background: linear-gradient(rgb(65,105,225, 0.3),rgb(65,105,225, 1));
+  background: linear-gradient(rgb(65,105,225, 0.3),rgb(65,105,225, 1)), white;
   border-image: linear-gradient(rgb(65,105,225, 0.3),rgb(65,105,225, 1)) 20 stretch;
 }
 .case-light-blue{
   border: 1px solid rgb(135,206,250, 1);
-  background: linear-gradient(rgb(135,206,250, 0.3),rgb(135,206,250, 1));
+  background: linear-gradient(rgb(135,206,250, 0.3),rgb(135,206,250, 1)), white;
   border-image: linear-gradient(rgb(135,206,250, 0.3),rgb(135,206,250, 1)) 20 stretch;
 }
 body {
