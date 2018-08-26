@@ -139,6 +139,7 @@ window.onload = function() {
   function showInventoryItems() {
     var itemImage = document.createElement("IMG");
     itemImage.src = "img/block_1.png"
+    itemImage.className = "case-red inventory-items";
     document.getElementById("inventory-region").appendChild(itemImage);
   }
 
