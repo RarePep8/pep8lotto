@@ -160,7 +160,8 @@ function queryInventory(userId, res) {
         //        var responseJSON = JSON.stringify(response);
         for (var index in response.inventory) {
           var item = response.inventory[index];
-          item.itemUrl = items[item.item_id];
+          item.itemName = items[item.item_id].name;
+          item.itemUrl = items[item.item_id].url;
           console.log(item.itemUrl);
         }
         res.send(response);
