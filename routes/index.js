@@ -7,59 +7,59 @@ app.get('/', function(req, res) {
 });
 var items = [{}, {
 	"name": "Slime Green Block",
-	"url": "img/block_1.png"
+	"url": "img/block_1.png",
 	"rarity": "Uncommon"
 }, {
 	"name": "Yellow Block",
-	"url": "img/block_2.png"
+	"url": "img/block_2.png",
 	"rarity": "Uncommon"
 }, {
 	"name": "Green Block",
-	"url": "img/block_3.png"
+	"url": "img/block_3.png",
 	"rarity": "Uncommon"
 }, {
 	"name": "Blue Block",
-	"url": "img/block_4.png"
+	"url": "img/block_4.png",
 	"rarity": "Uncommon"
 }, {
 	"name": "Purple Block",
-	"url": "img/block_5.png"
+	"url": "img/block_5.png",
 	"rarity": "Uncommon"
 }, {
 	"name": "Pink Block",
-	"url": "img/block_6.png"
+	"url": "img/block_6.png",
 	"rarity": "Uncommon"
 }, {
 	"name": "Cyan Block",
-	"url": "img/block_7.png"
+	"url": "img/block_7.png",
 	"rarity": "Uncommon"
 }, {
 	"name": "Slime Green Checker Block",
-	"url": "img/block_8.png"
+	"url": "img/block_8.png",
 	"rarity": "Rare"
 }, {
 	"name": "Yellow Checker Block",
-	"url": "img/block_9.png"
+	"url": "img/block_9.png",
 	"rarity": "Rare"
 }, {
 	"name": "Green Checker Block",
-	"url": "img/block_10.png"
+	"url": "img/block_10.png",
 	"rarity": "Rare"
 }, {
 	"name": "Blue Checker Block",
-	"url": "img/block_11.png"
+	"url": "img/block_11.png",
 	"rarity": "Rare"
 }, {
 	"name": "Purple Checker Block",
-	"url": "img/block_12.png"
+	"url": "img/block_12.png",
 	"rarity": "Rare"
 }, {
 	"name": "Pink Checker Block",
-	"url": "img/block_13.png"
+	"url": "img/block_13.png",
 	"rarity": "Rare"
 }, {
 	"name": "Cyan Checker Block",
-	"url": "img/block_14.png"
+	"url": "img/block_14.png",
 	"rarity": "Rare"
 }];
 var rarityColors = { "Uncommon": "light-blue", "Rare": "blue" }
