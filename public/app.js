@@ -144,10 +144,16 @@ window.onload = function() {
     var obj = JSON.parse(this.responseText);
     var invList = obj.inventory;
     for (var index in invList) {
+      var invDiv = document.createElement("DIV");
+      var quantityDiv = document.createElement("DIV");
       var itemImage = document.createElement("IMG");
       itemImage.src = invList[index].itemUrl;
       itemImage.className = "case-" + invList[index].itemColor + " inventory-items";
-      document.getElementById("inventory-region").appendChild(itemImage);
+      invDiv.appendChild(itemImage);
+      quantityDiv.className = "item-quantity";
+      quantityDiv.innerText = 1;
+      invDiv.appendChild(quantityDiv);
+      document.getElementById("inventory-region").appendChild(invDiv);
     }
 
   }
