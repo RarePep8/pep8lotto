@@ -152,10 +152,7 @@ function queryInventory(userId, res) {
       userId,
       function(err, result, fields) {
         if (err) throw err;
-        for (var test in result) {
-          console.log("yeethay");
-          console.log(test);
-        }
+        console.log(result[0]);
         connection.release();
         var response = {
           inventory: result
