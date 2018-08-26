@@ -141,6 +141,9 @@ window.onload = function() {
   }
 
   function showInventoryItems() {
+    var obj = JSON.parse(this.responseText);
+    var invList = obj.inventory;
+    console.log(invList);
     var itemImage = document.createElement("IMG");
     itemImage.src = "img/block_1.png"
     itemImage.className = "case-red inventory-items";
