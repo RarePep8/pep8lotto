@@ -152,16 +152,16 @@ function queryInventory(userId, res) {
       userId,
       function(err, result, fields) {
         if (err) throw err;
-        console.log(result[0]);
         connection.release();
         var response = {
           inventory: result
         };
         console.log(response.inventory);
         //        var responseJSON = JSON.stringify(response);
-        for (var item in response.inventory) {
-          console.log(item);
-          item.itemUrl = "img/block_1.png";
+        for (var index in response.inventory) {
+          var item = response.inventory[index];
+          item.itemUrl = items[item.item_id];
+          console.log(item.itemUrl);
         }
         res.send(response);
       });
