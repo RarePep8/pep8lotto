@@ -113,6 +113,10 @@ window.onload = function() {
   function showCasesPage() {
     document.getElementById('inventory-region').style.display = "none";
     document.getElementById('cases-region').style.display = "inline-block";
+    var inv = document.getElementById('inventory-region');
+    while (inv.firstChild) {
+      inv.removeChild(inv.firstChild);
+    }
   }
 
   function showInventory() {
