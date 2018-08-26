@@ -157,7 +157,8 @@ function queryInventory(userId, res) {
           inventory: result
         };
         for (var item in response.inventory) {
-          item.itemUrl = items[item.item_id].url;
+          console.log(item.item_id);
+          item.itemUrl = "img/block_1.png";
         }
         res.send(response);
       });
