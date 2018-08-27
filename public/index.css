@@ -164,3 +164,6 @@ body {
   top: 75px;
   left: 80px;
 }
+.loot-message{
+  display:inline-block;
+}

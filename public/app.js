@@ -96,8 +96,9 @@ window.onload = function() {
     request.send();
   }
 
-  function update_inventory() {
-    console.log(this.responseText);
+  function showLoot() {
+    var obj = JSON.parse(this.responseText);
+    document.getElementById('loot-message').innerText = "You uboxed "obj.itemName+"!";
   }
 
   function openBasic() {
