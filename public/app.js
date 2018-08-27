@@ -149,7 +149,7 @@ window.onload = function() {
       var itemImage = document.createElement("IMG");
       itemImage.src = invList[index].itemUrl;
       itemImage.className = "case-" + invList[index].itemColor + " inventory-items";
-      invDiv.classNAme = "inventory-item";
+      invDiv.className = "inventory-item";
       invDiv.appendChild(itemImage);
       quantityDiv.className = "item-quantity";
       quantityDiv.innerText = 1;
