@@ -98,7 +98,7 @@ window.onload = function() {
 
   function showLoot() {
     var obj = JSON.parse(this.responseText);
-    document.getElementById('loot-message').innerText = "You uboxed "obj.itemName+"!";
+    document.getElementById('loot-message').innerText = "You uboxed "+obj.itemName+"!";
   }
 
   function openBasic() {
