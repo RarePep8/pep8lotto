@@ -156,6 +156,7 @@ body {
   width: 100px;
 }
 .inventory-item{
+  display: inline-block;
   position: relative;
 }
 .item-quantity{
