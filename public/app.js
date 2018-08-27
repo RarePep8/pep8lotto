@@ -104,7 +104,7 @@ window.onload = function() {
   function openBasic() {
     if (currAuthenticated) {
       const request = new XMLHttpRequest();
-      request.addEventListener('load', update_inventory);
+      request.addEventListener('load', showLoot);
       request.open('get', '/open-basic?username=\"' + currUsername +
         '\"&password=' + currPassword);
       request.send();
