@@ -152,7 +152,7 @@ window.onload = function() {
       invDiv.className = "inventory-item";
       invDiv.appendChild(itemImage);
       quantityDiv.className = "item-quantity";
-      quantityDiv.innerText = 1;
+      quantityDiv.innerText = invList[index].item_quantity;
       invDiv.appendChild(quantityDiv);
       document.getElementById("inventory-region").appendChild(invDiv);
     }
