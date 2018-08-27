@@ -161,7 +161,6 @@ body {
 }
 .item-quantity{
   position: absolute;
-  top: 50px;
-  left: 50px;
-  width: 100%;
+  top: 95px;
+  left: 95px;
 }
