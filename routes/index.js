@@ -81,7 +81,6 @@ function authenticate(req, res, action) {
 			function(err, result, fields) {
 				if(err) throw err;
 				connection.release();
-				console.log(result);
 				var userId = result[0].user_id;
 				var result_string = (result.length == 0) ? "" : result[0].password;
 				var response = {
@@ -93,13 +92,11 @@ function authenticate(req, res, action) {
 				}
 				response.authenticated = (result_string != "") && (result_string ==
 					password);
-				console.log(response.authenticated);
 				if(action == "login") {
 					res.send(response.authenticated);
 				} else if(action == "get-balance") {
 					if(response.authenticated) {
 						response.balance = result[0].balance;
-						console.log(response);
 					}
 					res.send(response);
 				} else if(action == "earn" && response.authenticated) {
@@ -127,7 +124,6 @@ function queryEarn(userId, res) {
 			var response = {
 				"authenticated": true
 			}
-			console.log(response);
 			res.send(response.authenticated);
 		});
 	});
@@ -146,7 +142,6 @@ function queryOpenBasic(userId, res) {
 		"itemName": items[itemInt].name,
 		"itemUrl": items[itemInt].url
 	}
-	console.log("You got " + response.itemName);
 	database.pool.getConnection(function(err, connection) {
 		if(err) throw err;
 		connection.query(increase_quantity_query1 + userId + "," +
@@ -171,14 +166,12 @@ function queryInventory(userId, res) {
 				var response = {
 					inventory: result
 				};
-				console.log(response.inventory);
 				//        var responseJSON = JSON.stringify(response);
 				for(var index in response.inventory) {
 					var item = response.inventory[index];
 					item.itemName = items[item.item_id].name;
 					item.itemUrl = items[item.item_id].url;
           item.itemColor = rarityColors[items[item.item_id].rarity];
-					console.log(item.itemUrl);
 				}
 				res.send(response);
 			});

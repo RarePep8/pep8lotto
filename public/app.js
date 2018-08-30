@@ -12,8 +12,6 @@ window.onload = function() {
     document.getElementById('coin-count-text').innerText = obj.balance;
     document.getElementById('coin-count-text').style.display = "inline-block";
     document.getElementById('pep8coin-count').style.display = "inline-block";
-    console.log(obj.balance);
-    console.log(this.responseText);
   }
 
 
@@ -54,7 +52,6 @@ window.onload = function() {
     document.getElementById('coin-count-text').style.display = "none";
     document.getElementById('pep8coin-count').style.display = "none";
   }
-  console.log("yeet");
   document.getElementById('login-button').onclick = login;
 
 
@@ -62,7 +59,6 @@ window.onload = function() {
   var password_input = document.getElementById('password');
 
   function enter_press_login(event) {
-    console.log("yah yeet");
     // Cancel the default action, if needed
     event.preventDefault();
     // Number 13 is the "Enter" key on the keyboard
@@ -144,6 +140,7 @@ window.onload = function() {
   function showInventoryItems() {
     var obj = JSON.parse(this.responseText);
     var invList = obj.inventory;
+    sortInvList(invList);
     for (var index in invList) {
       var invDiv = document.createElement("DIV");
       var quantityDiv = document.createElement("DIV");
@@ -157,9 +154,12 @@ window.onload = function() {
       invDiv.appendChild(quantityDiv);
       document.getElementById("inventory-region").appendChild(invDiv);
     }
-
   }
-
+  function sortInvList(invList){
+    invList.sort(function(a, b) {
+      return a.item_rarity-b.item_rarity;
+    });
+  }
   document.getElementById('doubleup').onclick = earn;
   document.getElementById('buy-basic-button').onclick = openBasic;
   document.getElementById('pills-cases').onclick = showCasesPage;
