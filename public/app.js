@@ -156,9 +156,10 @@ window.onload = function() {
     }
   }
   function sortInvList(invList){
-    invList.reverse(function(a, b) {
+    invList.sort(function(a, b) {
       return a.item_rarity-b.item_rarity;
     });
+    invList.reverse();
   }
   document.getElementById('doubleup').onclick = earn;
   document.getElementById('buy-basic-button').onclick = openBasic;
