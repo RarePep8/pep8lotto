@@ -34,31 +34,31 @@ var items = [{}, {
 	"url": "img/block_7.png",
 	"rarity": "Uncommon"
 }, {
-	"name": "Slime Green Checker Block",
+	"name": "Slime Green Checkered Block",
 	"url": "img/block_8.png",
 	"rarity": "Rare"
 }, {
-	"name": "Yellow Checker Block",
+	"name": "Yellow Checkered Block",
 	"url": "img/block_9.png",
 	"rarity": "Rare"
 }, {
-	"name": "Green Checker Block",
+	"name": "Green Checkered Block",
 	"url": "img/block_10.png",
 	"rarity": "Rare"
 }, {
-	"name": "Blue Checker Block",
+	"name": "Blue Checkered Block",
 	"url": "img/block_11.png",
 	"rarity": "Rare"
 }, {
-	"name": "Purple Checker Block",
+	"name": "Purple Checkered Block",
 	"url": "img/block_12.png",
 	"rarity": "Rare"
 }, {
-	"name": "Pink Checker Block",
+	"name": "Pink Checkered Block",
 	"url": "img/block_13.png",
 	"rarity": "Rare"
 }, {
-	"name": "Cyan Checker Block",
+	"name": "Cyan Checkered Block",
 	"url": "img/block_14.png",
 	"rarity": "Rare"
 }];
