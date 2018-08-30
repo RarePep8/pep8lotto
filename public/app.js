@@ -156,7 +156,7 @@ window.onload = function() {
     }
   }
   function sortInvList(invList){
-    invList.sort(function(a, b) {
+    invList.reverse(function(a, b) {
       return a.item_rarity-b.item_rarity;
     });
   }
