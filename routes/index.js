@@ -81,7 +81,6 @@ function authenticate(req, res, action) {
 			function(err, result, fields) {
 				if(err) throw err;
 				connection.release();
-				var userId = result[0].user_id;
 				var result_string = (result.length == 0) ? "" : result[0].password;
 				var response = {
 					authenticated: false,
@@ -92,6 +91,9 @@ function authenticate(req, res, action) {
 				}
 				response.authenticated = (result_string != "") && (result_string ==
 					password);
+				if(response.authenticated) {
+					var userId = result[0].user_id;
+				}
 				if(action == "login") {
 					res.send(response.authenticated);
 				} else if(action == "get-balance") {
