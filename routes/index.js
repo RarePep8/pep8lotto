@@ -72,8 +72,8 @@ const increase_quantity_query2 =
 	",1)ON DUPLICATE KEY UPDATE item_quantity = item_quantity + 1";
 
 function authenticate(req, res, action) {
-	var username = req.param('username');
-	var password = req.param('password');
+	var username = req.params.username;
+	var password = req.params.password;
 	var authenticated = false;
 	database.pool.getConnection(function(err, connection) {
 		if(err) throw err;
