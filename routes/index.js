@@ -7,7 +7,7 @@ app.get('/', function(req, res) {
 });
 var fs = require('fs');
 var items= JSON.parse(fs.readFileSync('routes/blocks.json', 'utf8'));
-var rarityColors = { "Uncommon": "light-blue", "Rare": "blue" }
+var rarityColors = JSON.parse(fs.readFileSync('routes/rarity-colours.json', 'utf8'));
 
 const double_query = "UPDATE user SET balance = balance *2 where username=";
 const halve_query = "UPDATE user SET balance = balance /2 where username=";
