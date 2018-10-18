@@ -5,7 +5,8 @@ app.use(express.static('/../public'));
 app.get('/', function(req, res) {
 	res.sendFile('index.html');
 });
-var items = JSON.parse('blocks.json');
+var fs = require('fs');
+var items= JSON.parse(fs.readFileSync('blocks.json', 'utf8'));
 var rarityColors = { "Uncommon": "light-blue", "Rare": "blue" }
 
 const double_query = "UPDATE user SET balance = balance *2 where username=";
