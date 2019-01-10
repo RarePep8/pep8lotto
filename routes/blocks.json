@@ -54,4 +54,61 @@
 	"name": "Cyan Checkered Block",
 	"url": "img/block_14.png",
 	"rarity": "Rare"
+}, {
+	"name": "Orange Dotted Block",
+	"url": "img/block_15.png",
+	"rarity": "Uncommon"
+}, {
+	"name": "Red Dotted Block",
+	"url": "img/block_16.png",
+	"rarity": "Uncommon"
+}, {
+	"name": "Yellow Dotted Block",
+	"url": "img/block_17.png",
+	"rarity": "Uncommon"
+}, {
+	"name": "Green Dotted Block",
+	"url": "img/block_18.png",
+	"rarity": "Uncommon"
+}, {
+	"name": "Light Blue Dotted Block",
+	"url": "img/block_19.png",
+	"rarity": "Uncommon"
+}, {
+	"name": "Purple Dotted Block",
+	"url": "img/block_20.png",
+	"rarity": "Uncommon"
+},
+{
+	"name": "Slime Green Dotted Block",
+	"url": "img/block_21.png",
+	"rarity": "Uncommon"
+},{
+	"name": "Orange Dotted Checkered Top Block",
+	"url": "img/block_22.png",
+	"rarity": "Rare"
+},{
+	"name": "Red Dotted Checkered Top Block",
+	"url": "img/block_23.png",
+	"rarity": "Rare"
+},{
+	"name": "Yellow Dotted Checkered Top Block",
+	"url": "img/block_24.png",
+	"rarity": "Rare"
+},{
+	"name": "Green Dotted Checkered Top Block",
+	"url": "img/block_25.png",
+	"rarity": "Rare"
+},{
+	"name": "Light Blue Dotted Checkered Top Block",
+	"url": "img/block_26.png",
+	"rarity": "Rare"
+},{
+	"name": "Purple Dotted Checkered Top Block",
+	"url": "img/block_27.png",
+	"rarity": "Rare"
+},{
+	"name": "Slime Green Dotted Checkered Top Block",
+	"url": "img/block_28.png",
+	"rarity": "Rare"
 }]

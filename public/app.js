@@ -106,6 +106,15 @@ window.onload = function() {
       request.send();
     }
   }
+  function openDotted() {
+    if (currAuthenticated) {
+      const request = new XMLHttpRequest();
+      request.addEventListener('load', showLoot);
+      request.open('get', '/open-dotted?username=\"' + currUsername +
+        '\"&password=' + currPassword);
+      request.send();
+    }
+  }
 
   function showCasesPage() {
     document.getElementById('inventory-region').style.display = "none";
@@ -163,6 +172,7 @@ window.onload = function() {
   }
   document.getElementById('doubleup').onclick = earn;
   document.getElementById('buy-basic-button').onclick = openBasic;
+  document.getElementById('buy-dotted-button').onclick = openDotted;
   document.getElementById('pills-cases').onclick = showCasesPage;
   document.getElementById('pills-inventory').onclick = showInventory;
 };

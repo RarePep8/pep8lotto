@@ -50,7 +50,9 @@ function authenticate(req, res, action) {
 					queryEarn(userId, res);
 				} else if(action == "open-basic" && response.authenticated) {
 					queryOpenBasic(userId, res);
-				} else if(action == "inventory" && response.authenticated) {
+				} else if(action== "open-dotted" && response.authenticated){
+					queryOpenDotted(userId, res);
+				}else if(action == "inventory" && response.authenticated) {
 					queryInventory(userId, res);
 				}
 			});
@@ -79,10 +81,10 @@ function queryEarn(userId, res) {
 function queryOpenBasic(userId, res) {
 	var rarityInt = Math.random();
 	if(rarityInt < 0.75) {
-		var itemInt = Math.floor(Math.random() * 7) + 1;
+		var itemInt = Math.floor(Math.random() * 6) + 1;
 		rarityInt = 3;
 	} else {
-		var itemInt = Math.floor(Math.random() * 7) + 7;
+		var itemInt = Math.floor(Math.random() * 6) + 8;
 		rarityInt = 4;
 	}
 	var response = {
@@ -100,7 +102,30 @@ function queryOpenBasic(userId, res) {
 			});
 	});
 }
-
+function queryOpenDotted(userId, res) {
+	var rarityInt = Math.random();
+	if(rarityInt < 0.75) {
+		var itemInt = Math.floor(Math.random() * 6) + 15;
+		rarityInt = 3;
+	} else {
+		var itemInt = Math.floor(Math.random() * 6) + 22;
+		rarityInt = 4;
+	}
+	var response = {
+		"itemName": items[itemInt].name,
+		"itemUrl": items[itemInt].url
+	}
+	database.pool.getConnection(function(err, connection) {
+		if(err) throw err;
+		connection.query(increase_quantity_query1 + userId + "," +
+			itemInt + "," + rarityInt + increase_quantity_query2,
+			function(err, result, fields) {
+				if(err) throw err;
+				connection.release();
+				res.send(response);
+			});
+	});
+}
 function queryInventory(userId, res) {
 	database.pool.getConnection(function(err, connection) {
 		if(err) throw err;
@@ -135,6 +160,9 @@ app.get('/get-balance', function(req, res) {
 });
 app.get('/open-basic', function(req, res) {
 	authenticate(req, res, 'open-basic');
+});
+app.get('/open-dotted', function(req, res) {
+	authenticate(req, res, 'open-dotted');
 });
 app.get('/inventory', function(req, res) {
 	authenticate(req, res, 'inventory');
