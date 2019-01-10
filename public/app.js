@@ -96,6 +96,10 @@ window.onload = function() {
     var obj = JSON.parse(this.responseText);
     document.getElementById('basic-loot-message').innerText = "You uboxed "+obj.itemName+"!";
   }
+  function showLootDotted() {
+    var obj = JSON.parse(this.responseText);
+    document.getElementById('dotted-loot-message').innerText = "You uboxed "+obj.itemName+"!";
+  }
 
   function openBasic() {
     if (currAuthenticated) {
@@ -109,7 +113,7 @@ window.onload = function() {
   function openDotted() {
     if (currAuthenticated) {
       const request = new XMLHttpRequest();
-      request.addEventListener('load', showLoot);
+      request.addEventListener('load', showLootDotted);
       request.open('get', '/open-dotted?username=\"' + currUsername +
         '\"&password=' + currPassword);
       request.send();
